@@ -1,0 +1,187 @@
+.joinUs {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  font-family: inherit;
+}
+.joinUsTitle {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl) 0 var(--padding-327xl);
+}
+.weInviteResearchers {
+  margin-block-start: 0;
+  margin-block-end: 10px;
+}
+.editorijestmcom1 {
+  text-decoration: underline;
+}
+.editorijestmcom {
+  color: inherit;
+}
+.exploreTheLatestResearchIn {
+  margin: 0;
+}
+.weInviteResearchersContainer {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-xl);
+  line-height: 24px;
+  font-weight: 400;
+  font-family: var(--font-judson);
+  text-align: justify;
+}
+.joinUsHeader {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-16xl);
+  min-width: 561px;
+  max-width: 100%;
+}
+.contactUs1 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  font-family: inherit;
+}
+.contactTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-19xl) 0 var(--padding-21xl);
+}
+.contactLinkChild {
+  align-self: stretch;
+  height: 1px;
+  position: relative;
+  border-top: 1px solid var(--color-dimgray-100);
+  box-sizing: border-box;
+}
+.contactLink {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-mini);
+}
+.queriesijestmcom1 {
+  text-decoration: underline;
+}
+.queriesijestmcom {
+  color: var(--color-dodgerblue-100);
+}
+.contactUsForContainer {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  line-height: 121.05%;
+  font-weight: 500;
+  font-family: inherit;
+}
+.inquiryDescription {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-6xs) 0 var(--padding-3xs);
+  text-align: center;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-inter);
+}
+.contactUs {
+  width: 271px;
+  border-radius: var(--br-base);
+  background-color: var(--color-whitesmoke-100);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-7xl) var(--padding-6xl) var(--padding-47xl);
+  box-sizing: border-box;
+  gap: var(--gap-12xl);
+  font-size: var(--font-size-7xl);
+}
+.joinUsContent,
+.joinUsContentWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.joinUsContent {
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap-29xl);
+}
+.joinUsContentWrapper {
+  align-self: stretch;
+  justify-content: flex-end;
+  padding: 0 var(--padding-33xl) var(--padding-10xs) var(--padding-27xl);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-26xl);
+  color: var(--color-black);
+  font-family: var(--font-istok-web);
+}
+@media screen and (max-width: 750px) {
+  .joinUs {
+    font-size: var(--font-size-17xl);
+  }
+  .joinUsTitle {
+    padding-left: var(--padding-154xl);
+    box-sizing: border-box;
+  }
+  .joinUsHeader {
+    min-width: 100%;
+  }
+  .joinUsContent {
+    gap: var(--gap-5xl);
+  }
+  .joinUsContentWrapper {
+    padding-left: var(--padding-4xl);
+    padding-right: var(--padding-7xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .joinUs {
+    font-size: var(--font-size-8xl);
+  }
+  .joinUsTitle {
+    padding-left: var(--padding-xl);
+    box-sizing: border-box;
+  }
+  .weInviteResearchersContainer {
+    font-size: var(--font-size-base);
+    line-height: 19px;
+  }
+  .joinUsHeader {
+    gap: var(--gap-mid);
+  }
+  .contactUs1 {
+    font-size: var(--font-size-2xl);
+  }
+  .contactUsForContainer {
+    font-size: var(--font-size-base);
+    line-height: 19px;
+  }
+  .contactUs {
+    gap: var(--gap-mini);
+  }
+}

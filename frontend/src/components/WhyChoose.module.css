@@ -1,0 +1,329 @@
+.whyChooseIjestm {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  font-family: inherit;
+}
+.peerReviewedExcellence {
+  font-size: var(--font-size-xl);
+  font-family: var(--font-judson);
+}
+.peerReviewedExcellenceEver {
+  margin-block-start: 0;
+  margin-block-end: 10px;
+}
+.globalReach {
+  font-size: var(--font-size-xl);
+  font-family: var(--font-judson);
+}
+.globalReachOurJournalIsR {
+  margin-block-start: 0;
+  margin-block-end: 10px;
+}
+.interdisciplinaryFocus {
+  font-size: var(--font-size-xl);
+  font-family: var(--font-judson);
+}
+.interdisciplinaryFocusIjest {
+  margin-block-start: 0;
+  margin-block-end: 10px;
+}
+.openAccess {
+  font-size: var(--font-size-xl);
+  font-family: var(--font-judson);
+}
+.openAccessWeBelieveInOpe {
+  margin: 0;
+}
+.peerReviewedExcellenceEverContainer {
+  align-self: stretch;
+  position: relative;
+  line-height: 24px;
+  text-align: justify;
+  font-size: var(--font-size-mid);
+  font-family: var(--font-judson);
+}
+.excellenceContent {
+  width: 867px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  max-width: 100%;
+}
+.maskGroup,
+.maskGroup1,
+.maskGroup2,
+.maskGroup3,
+.maskGroup4,
+.maskGroup5 {
+  margin: 0;
+  width: 24px;
+  height: 25.2px;
+  position: relative;
+}
+.maskGroupParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-smi-8);
+}
+.authorsCanCheck,
+.easyAndFast,
+.emailNotificationSent,
+.publishResearchPaper,
+.publishResearchPaper1,
+.quickSupportThrough {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  font-family: inherit;
+}
+.authorsCanCheck,
+.easyAndFast,
+.emailNotificationSent,
+.publishResearchPaper1,
+.quickSupportThrough {
+  display: inline-block;
+  max-width: 100%;
+}
+.frameWrapper,
+.publishResearchPaperInAlmoParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.publishResearchPaperInAlmoParent {
+  align-self: stretch;
+  justify-content: flex-start;
+  gap: var(--gap-smi-4);
+}
+.frameWrapper {
+  flex: 1;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-10xs-2);
+  box-sizing: border-box;
+  min-width: 557px;
+}
+.excellenceWrapper,
+.frameParent {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.frameParent {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: var(--gap-14xl);
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  font-family: var(--font-judson);
+}
+.excellenceWrapper {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-30xl);
+  min-width: 594px;
+}
+.downloads {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  font-family: inherit;
+}
+.frameChild {
+  align-self: stretch;
+  height: 1px;
+  position: relative;
+  border-top: 1px solid var(--color-dimgray-100);
+  box-sizing: border-box;
+}
+.templateDownloadIcon {
+  width: 7.1px;
+  height: 11.3px;
+  position: relative;
+}
+.templateIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-10xs) 0 0;
+}
+.menuscriptTemplate {
+  position: relative;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.downloadsParent,
+.lineParent,
+.templateLink {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs-9);
+}
+.downloadsParent,
+.lineParent {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-3xl);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-dimgray-100);
+  font-family: var(--font-inter);
+}
+.downloadsParent {
+  gap: var(--gap-base);
+  text-align: left;
+  font-size: var(--font-size-7xl);
+  color: var(--color-black);
+  font-family: var(--font-istok-web);
+}
+.copyrightIcon {
+  width: 7.1px;
+  height: 11.3px;
+  position: relative;
+}
+.copyrightIconWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-10xs) 0 0;
+}
+.copyrightForm {
+  position: relative;
+  text-decoration: underline;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 101px;
+}
+.copyright1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs-9);
+}
+.vectorIcon {
+  width: 7.1px;
+  height: 11.3px;
+  position: relative;
+}
+.vectorWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-10xs) 0 0;
+}
+.coverPage {
+  position: relative;
+  text-decoration: underline;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 78px;
+}
+.copyright2 {
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-6xs-9);
+}
+.copyright,
+.copyright2,
+.whyChoose,
+.whyContent {
+  display: flex;
+  align-items: flex-start;
+}
+.copyright {
+  width: 271px;
+  border-radius: var(--br-base);
+  background-color: var(--color-whitesmoke-100);
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-7xl) var(--padding-6xl) var(--padding-36xl)
+    var(--padding-7xl);
+  box-sizing: border-box;
+  gap: var(--gap-14xl);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-dimgray-100);
+  font-family: var(--font-inter);
+}
+.whyChoose,
+.whyContent {
+  flex-direction: row;
+  max-width: 100%;
+}
+.whyContent {
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 20px;
+}
+.whyChoose {
+  align-self: stretch;
+  justify-content: flex-end;
+  padding: 0 var(--padding-28xl) var(--padding-8xs-8) var(--padding-29xl);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-7xl);
+  color: var(--color-black);
+  font-family: var(--font-istok-web);
+}
+@media screen and (max-width: 1050px) {
+  .frameParent {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 750px) {
+  .excellenceWrapper,
+  .frameWrapper {
+    min-width: 100%;
+  }
+  .whyChoose {
+    padding-left: var(--padding-5xl);
+    padding-right: var(--padding-4xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .whyChooseIjestm {
+    font-size: var(--font-size-2xl);
+  }
+  .authorsCanCheck,
+  .easyAndFast,
+  .emailNotificationSent,
+  .publishResearchPaper,
+  .publishResearchPaper1,
+  .quickSupportThrough {
+    font-size: var(--font-size-lg);
+  }
+  .frameParent {
+    gap: var(--gap-base);
+  }
+  .excellenceWrapper {
+    gap: var(--gap-5xl);
+  }
+  .downloads {
+    font-size: var(--font-size-2xl);
+  }
+  .copyright {
+    gap: var(--gap-base);
+  }
+}

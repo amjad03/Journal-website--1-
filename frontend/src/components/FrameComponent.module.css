@@ -1,0 +1,68 @@
+.frameChild {
+  margin-top: -55px;
+  margin-left: -50px;
+  width: 203px;
+  height: 17px;
+  position: relative;
+  background-color: var(--color-darkslateblue);
+  flex-shrink: 0;
+}
+.healthSciences {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 103px;
+}
+.allJournalsChild {
+  height: 1px;
+  flex: 1;
+  position: relative;
+  border-top: 1px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+}
+.allJournals {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-sm);
+}
+.healthSciencesParent,
+.rectangleParent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.healthSciencesParent {
+  align-self: stretch;
+  align-items: flex-end;
+  gap: var(--gap-3xl);
+}
+.rectangleParent {
+  height: 101px;
+  width: 199px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-shrink: 0;
+  align-items: flex-start;
+  padding: var(--padding-23xl) var(--padding-29xl) var(--padding-lgi);
+  box-sizing: border-box;
+  gap: var(--gap-19xl);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-dimgray-200);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 450px) {
+  .rectangleParent {
+    gap: var(--gap-lgi);
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

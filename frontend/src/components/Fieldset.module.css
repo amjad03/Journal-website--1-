@@ -1,0 +1,445 @@
+.abstract,
+.title {
+  position: relative;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  min-width: 45px;
+}
+.abstract {
+  min-width: 86px;
+}
+.keywords {
+  display: inline-block;
+  min-width: 98px;
+}
+.keywords,
+.messageToEditor,
+.researchArea,
+.selectResearchPaper {
+  position: relative;
+  letter-spacing: 0.03em;
+}
+.messageToEditor {
+  align-self: stretch;
+}
+.fieldNames,
+.inputLabels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.fieldNames {
+  align-self: stretch;
+  gap: var(--gap-31xl);
+}
+.inputLabels {
+  width: 227px;
+  padding: var(--padding-sm) 0 0;
+  box-sizing: border-box;
+}
+.frameChild,
+.pleaseWriteIn {
+  position: relative;
+  max-width: 100%;
+}
+.frameChild {
+  height: 51px;
+  width: 900px;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-crimson);
+  box-sizing: border-box;
+  display: none;
+}
+.pleaseWriteIn {
+  width: 385px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-base);
+  background-color: transparent;
+  height: 20px;
+  letter-spacing: 0.03em;
+  color: var(--color-dimgray-100);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.frameItem,
+.rectangleParent {
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-crimson);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.rectangleParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-base) var(--padding-smi) var(--padding-mini);
+}
+.frameItem {
+  height: 51px;
+  width: 900px;
+  position: relative;
+  display: none;
+}
+.shortBackgroundInformation {
+  width: 397px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-base);
+  background-color: transparent;
+  height: 20px;
+  position: relative;
+  letter-spacing: 0.03em;
+  color: var(--color-dimgray-100);
+  text-align: left;
+  display: inline-block;
+  max-width: 100%;
+  padding: 0;
+  z-index: 1;
+}
+.rectangleGroup {
+  align-self: stretch;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-crimson);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-base) var(--padding-smi) var(--padding-mini);
+  max-width: 100%;
+}
+.commaSpeartedList,
+.frameInner {
+  position: relative;
+  max-width: 100%;
+}
+.frameInner {
+  height: 51px;
+  width: 900px;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-darkgray-200);
+  box-sizing: border-box;
+  display: none;
+}
+.commaSpeartedList {
+  width: 390px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-base);
+  background-color: transparent;
+  height: 20px;
+  letter-spacing: 0.03em;
+  color: var(--color-dimgray-100);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.rectangleContainer,
+.rectangleDiv {
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.rectangleContainer {
+  align-self: stretch;
+  border-left: 5px solid var(--color-darkgray-200);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-base) var(--padding-smi) var(--padding-mini);
+}
+.rectangleDiv {
+  height: 51px;
+  width: 900px;
+  position: relative;
+  border-left: 5px solid var(--color-crimson);
+  display: none;
+}
+.selectResearchArea {
+  position: relative;
+  letter-spacing: 0.03em;
+  z-index: 1;
+}
+.vectorIcon {
+  width: 24px;
+  height: 15px;
+  position: relative;
+  border-radius: var(--br-11xs);
+  object-fit: contain;
+  z-index: 2;
+}
+.dropdownIcon,
+.groupDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+}
+.groupDiv {
+  align-self: stretch;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-crimson);
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--padding-base) var(--padding-10xl) var(--padding-base)
+    var(--padding-smi);
+  max-width: 100%;
+  gap: var(--gap-xl);
+}
+.fileInputChild,
+.fileLabelChild {
+  position: relative;
+  box-sizing: border-box;
+  display: none;
+}
+.fileInputChild {
+  height: 51px;
+  width: 424px;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-crimson);
+  max-width: 100%;
+}
+.fileLabelChild {
+  height: 36px;
+  width: 133px;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+}
+.chooseFile {
+  position: relative;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  min-width: 113px;
+  z-index: 2;
+}
+.fileLabel {
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-darkgray-100);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-9xs) var(--padding-5xs) var(--padding-9xs)
+    var(--padding-3xs);
+  white-space: nowrap;
+  z-index: 1;
+}
+.noFileChosen {
+  position: relative;
+  letter-spacing: 0.03em;
+  z-index: 1;
+}
+.fileInput,
+.fileName,
+.fileSelection {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.fileName {
+  flex-direction: column;
+  padding: var(--padding-7xs) 0 0;
+}
+.fileInput,
+.fileSelection {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.fileInput {
+  align-self: stretch;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-crimson);
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-lg) var(--padding-6xs);
+  gap: var(--gap-lg);
+}
+.fileSelection {
+  width: 424px;
+  flex-direction: column;
+  padding: var(--padding-7xs) 0 0;
+}
+.docxOrDoc {
+  flex: 1;
+  position: relative;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.03em;
+  display: inline-block;
+  min-width: 293px;
+  max-width: 100%;
+}
+.researchArea1,
+.upload {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.upload {
+  flex-direction: row;
+  gap: var(--gap-6xl);
+  font-size: var(--font-size-xl);
+}
+.researchArea1 {
+  flex-direction: column;
+  gap: var(--gap-mid);
+}
+.enterYourMessage,
+.frameChild1 {
+  position: relative;
+  max-width: 100%;
+}
+.frameChild1 {
+  height: 180px;
+  width: 900px;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-darkgray-200);
+  box-sizing: border-box;
+  display: none;
+}
+.enterYourMessage {
+  width: 425.4px;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.rectangleParent1 {
+  align-self: stretch;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-darkgray-200);
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: var(--padding-base) var(--padding-smi);
+  min-height: 180px;
+}
+.frameParent,
+.inputFields,
+.rectangleParent1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.frameParent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-4xl);
+  min-width: 585px;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray-100);
+}
+.inputFields {
+  align-self: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--gap-base);
+}
+.frameChild2 {
+  height: 51px;
+  width: 1143px;
+  position: relative;
+  background-color: var(--color-lavender-200);
+  display: none;
+  max-width: 100%;
+}
+.authorsDetails {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  font-family: inherit;
+  z-index: 1;
+}
+.rectangleParent2 {
+  align-self: stretch;
+  background-color: var(--color-lavender-200);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-xs) var(--padding-xl) var(--padding-xs)
+    var(--padding-11xl);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.dontWriteDr {
+  position: relative;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.03em;
+  color: var(--color-darkslateblue);
+  display: inline-block;
+  max-width: 100%;
+}
+.authors,
+.fieldset {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-4xs);
+  max-width: 100%;
+  font-size: var(--font-size-3xl);
+  color: var(--color-darkslategray-100);
+}
+.fieldset {
+  gap: var(--gap-4xl);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 1050px) {
+  .upload {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 750px) {
+  .frameParent {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .abstract,
+  .keywords,
+  .messageToEditor,
+  .noFileChosen,
+  .researchArea,
+  .selectResearchPaper,
+  .title {
+    font-size: var(--font-size-base);
+  }
+  .fileInput {
+    flex-wrap: wrap;
+  }
+  .authorsDetails {
+    font-size: var(--font-size-lg);
+  }
+}

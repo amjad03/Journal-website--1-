@@ -1,0 +1,45 @@
+.frameChild {
+  height: 61px;
+  width: 283px;
+  position: relative;
+  border-radius: var(--br-7xs);
+  background: linear-gradient(270deg, #0085ff, #036);
+  display: none;
+}
+.sendMessage {
+  position: relative;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.03em;
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: center;
+  z-index: 1;
+}
+.rectangleParent,
+.submitButton {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.rectangleParent {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-lgi) var(--padding-47xl) var(--padding-lg);
+  background-color: transparent;
+  border-radius: var(--br-7xs);
+  background: linear-gradient(270deg, #0085ff, #036);
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+.submitButton {
+  align-self: stretch;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+}
+@media screen and (max-width: 450px) {
+  .rectangleParent {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

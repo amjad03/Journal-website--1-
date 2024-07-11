@@ -1,0 +1,35 @@
+.publication,
+.studyImpact {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.studyImpact {
+  justify-content: flex-start;
+  gap: var(--gap-36xl);
+}
+.publication {
+  justify-content: flex-end;
+  padding: 0 var(--padding-28xl) var(--padding-3xs) var(--padding-29xl);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--color-dimgray-200);
+  font-family: var(--font-port-lligat-slab);
+}
+@media screen and (max-width: 1225px) {
+  .studyImpact {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 750px) {
+  .studyImpact {
+    gap: var(--gap-8xl);
+  }
+  .publication {
+    padding-left: var(--padding-5xl);
+    padding-right: var(--padding-4xl);
+    box-sizing: border-box;
+  }
+}

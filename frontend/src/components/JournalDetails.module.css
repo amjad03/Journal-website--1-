@@ -1,0 +1,98 @@
+.journalInternationalJournalContainer {
+  display: inline-block;
+  max-width: 100%;
+}
+.addressBelalkandaBhatkalContainer,
+.journalInternationalJournalContainer,
+.publisherAnjumanInstituteContainer {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.03em;
+  font-family: inherit;
+}
+.addressBelalkandaBhatkalContainer {
+  display: inline-block;
+  max-width: 100%;
+}
+.publisherInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-6xs);
+  box-sizing: border-box;
+  gap: var(--gap-mini);
+  max-width: 100%;
+}
+.frameChild,
+.journalDetailsInner {
+  align-self: stretch;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.frameChild {
+  flex: 1;
+  position: relative;
+  border-top: 1px solid var(--color-darkgray-200);
+}
+.journalDetailsInner {
+  height: 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 0 var(--padding-11xs);
+}
+.ifYouHave {
+  color: var(--color-black);
+}
+.frequentlyAskedQuestion {
+  color: var(--color-dodgerblue-100);
+}
+.ifYouHaveAnyQuestionPlea {
+  margin: 0;
+}
+.ifYouHaveContainer {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  font-family: inherit;
+  display: inline-block;
+  max-width: 100%;
+}
+.journalDetails,
+.questionPrompt {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.questionPrompt {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 0 0 var(--padding-11xs);
+  text-align: left;
+}
+.journalDetails {
+  width: 1160px;
+  flex-direction: column;
+  padding: 0 var(--padding-xl) 0 0;
+  gap: var(--gap-mini);
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 450px) {
+  .addressBelalkandaBhatkalContainer,
+  .ifYouHaveContainer,
+  .journalInternationalJournalContainer,
+  .publisherAnjumanInstituteContainer {
+    font-size: var(--font-size-lg);
+  }
+}

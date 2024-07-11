@@ -1,0 +1,100 @@
+.screenshot20240629At637 {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+  display: none;
+  z-index: 0;
+}
+.formBoundary {
+  width: 100%;
+  height: 35px;
+  position: absolute;
+  margin: 0 !important;
+  top: 178px;
+  right: 0;
+  left: 0;
+  background-color: var(--color-lavender-200);
+}
+.formContainer,
+.formFields {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.formFields {
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-30xl);
+}
+.formContainer {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 var(--padding-50xl) 0 var(--padding-49xl);
+  box-sizing: border-box;
+}
+.country {
+  position: relative;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.03em;
+  font-family: var(--font-inter);
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  min-width: 81px;
+}
+.stateCityInput,
+.stateCityInputWrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.stateCityInput {
+  margin: 0;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3px;
+}
+.stateCityInputWrapper {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 var(--padding-50xl) var(--padding-2xs) var(--padding-49xl);
+  box-sizing: border-box;
+}
+.submitPaperPage {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-lgi) 0 0;
+  box-sizing: border-box;
+  gap: var(--gap-3xs);
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 750px) {
+  .formFields {
+    gap: var(--gap-5xl);
+  }
+  .formContainer,
+  .stateCityInputWrapper {
+    padding-left: var(--padding-15xl);
+    padding-right: var(--padding-15xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .country {
+    font-size: var(--font-size-base);
+  }
+}

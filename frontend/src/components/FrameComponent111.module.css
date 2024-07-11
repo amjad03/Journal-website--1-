@@ -1,0 +1,65 @@
+.currentIssue {
+    margin: 0;
+    font-size: var(--font-size-21xl);
+  }
+  .volume2Issue {
+    margin: 0;
+  }
+  .currentIssueVolumeContainer {
+    position: absolute;
+    top: 77px;
+    left: calc(50% - 147px);
+    letter-spacing: 0.03em;
+  }
+  .frameChild,
+  .groupChild {
+    position: absolute;
+    box-sizing: border-box;
+  }
+  .frameChild {
+    top: 218px;
+    left: calc(50% - 234px);
+    border-top: 2px solid var(--color-white);
+    width: 468px;
+    height: 2px;
+  }
+  .groupChild {
+    top: 0;
+    left: calc(50% - 152px);
+    border-radius: var(--br-31xl);
+    background-color: var(--color-dodgerblue-100);
+    border: 3px solid var(--color-white);
+    width: 304px;
+    height: 68px;
+  }
+  .submitPaper {
+    position: absolute;
+    top: 15px;
+    left: 64px;
+    letter-spacing: 0.03em;
+  }
+  .rectangleParent {
+    position: absolute;
+    top: 273px;
+    left: calc(50% - 152px);
+    width: 304px;
+    height: 68px;
+  }
+  .currentIssueVolume2IssueParent {
+    position: absolute;
+    top: 1671px;
+    left: calc(50% - 591px);
+    border-radius: var(--br-base);
+    width: 1182px;
+    height: 430px;
+    overflow: hidden;
+    background-image: url(/public/frame-11@3x.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    text-align: center;
+    font-size: var(--font-size-7xl);
+    color: var(--color-white);
+    font-family: var(--font-istok-web);
+  }
+  

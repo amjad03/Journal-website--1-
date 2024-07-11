@@ -1,0 +1,1448 @@
+.screenshot20240629At637 {
+    position: absolute;
+    top: 155px;
+    left: 2px;
+    width: 1280px;
+    height: 676px;
+    object-fit: cover;
+    display: none;
+  }
+  .joinUs {
+    position: absolute;
+    top: 2053px;
+    left: calc(50% - 79px);
+    font-size: var(--font-size-26xl);
+    letter-spacing: 0.03em;
+    font-family: var(--font-istok-web);
+    text-align: left;
+  }
+  .aimScopePageChild,
+  .aimScopePageItem {
+    position: absolute;
+    top: 1617.5px;
+    left: calc(50% - 535.5px);
+    border-top: 1px solid var(--color-dimgray);
+    box-sizing: border-box;
+    width: 1004px;
+    height: 1px;
+  }
+  .aimScopePageItem {
+    top: 3927.5px;
+    left: calc(50% - 505.5px);
+    display: none;
+  }
+  .groupChild {
+    position: absolute;
+    top: calc(50% - 19.55px);
+    left: calc(50% - 90.5px);
+    border-radius: var(--br-7xs);
+    background: linear-gradient(270deg, #0085ff, #036);
+    width: 181px;
+    height: 39.1px;
+  }
+  .submitArticle {
+    position: absolute;
+    top: 11px;
+    left: 39px;
+    letter-spacing: 0.03em;
+  }
+  .rectangleParent {
+    position: absolute;
+    top: calc(50% + 234.5px);
+    left: calc(50% - 90.5px);
+    width: 181px;
+    height: 39.1px;
+  }
+  .authorsDesk {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 110px);
+    letter-spacing: 0.03em;
+  }
+  .groupItem {
+    position: absolute;
+    top: 52.5px;
+    left: calc(50% - 110.5px);
+    border-top: 1px solid var(--color-dimgray);
+    box-sizing: border-box;
+    width: 221px;
+    height: 1px;
+  }
+  .currentIssue {
+    position: absolute;
+    top: 0;
+    left: 14px;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  .vectorIcon {
+    position: absolute;
+    height: 66.47%;
+    width: 6.57%;
+    top: 17.65%;
+    right: 93.43%;
+    bottom: 15.88%;
+    left: 0;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .currentIssueParent,
+  .groupWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 108px;
+    height: 17px;
+  }
+  .groupWrapper {
+    font-size: var(--font-size-sm);
+  }
+  .vectorIcon1 {
+    position: absolute;
+    height: 62.78%;
+    width: 9.34%;
+    top: 16.67%;
+    right: 90.66%;
+    bottom: 20.56%;
+    left: 0;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .groupFrame,
+  .indexingParent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 76px;
+    height: 18px;
+  }
+  .groupFrame {
+    top: 42px;
+  }
+  .openAccess {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  .vectorIcon2 {
+    position: absolute;
+    height: 62.78%;
+    width: 6.64%;
+    top: 16.67%;
+    right: 93.36%;
+    bottom: 20.56%;
+    left: 0;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .groupDiv,
+  .openAccessParent,
+  .vectorIcon3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 107px;
+    height: 18px;
+  }
+  .groupDiv,
+  .vectorIcon3 {
+    top: 85px;
+  }
+  .vectorIcon3 {
+    height: 62.78%;
+    width: 4.61%;
+    top: 16.67%;
+    right: 95.39%;
+    bottom: 20.56%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .authorsGuidelinesParent,
+  .groupWrapper1,
+  .vectorIcon4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 154px;
+    height: 18px;
+  }
+  .groupWrapper1,
+  .vectorIcon4 {
+    top: 128px;
+  }
+  .vectorIcon4 {
+    height: 62.78%;
+    width: 6.23%;
+    top: 16.67%;
+    right: 93.77%;
+    bottom: 20.56%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .callForPaperParent,
+  .groupWrapper2,
+  .vectorIcon5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 114px;
+    height: 18px;
+  }
+  .groupWrapper2,
+  .vectorIcon5 {
+    top: 171px;
+  }
+  .vectorIcon5 {
+    height: 62.78%;
+    width: 4.83%;
+    top: 16.67%;
+    right: 95.17%;
+    bottom: 20.56%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .groupWrapper3,
+  .onlineSubmissionParent,
+  .vectorIcon6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 147px;
+    height: 18px;
+  }
+  .groupWrapper3,
+  .vectorIcon6 {
+    top: 214px;
+  }
+  .vectorIcon6 {
+    height: 62.78%;
+    width: 5.59%;
+    top: 16.67%;
+    right: 94.41%;
+    bottom: 20.56%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .groupWrapper4,
+  .reviewerPolicyParent,
+  .vectorIcon7 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 127px;
+    height: 18px;
+  }
+  .groupWrapper4,
+  .vectorIcon7 {
+    top: 257px;
+  }
+  .vectorIcon7 {
+    height: 62.78%;
+    width: 4.44%;
+    top: 16.67%;
+    right: 95.56%;
+    bottom: 20.56%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .groupWrapper5,
+  .reviewerGuidelinesParent,
+  .vectorIcon8 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 18px;
+  }
+  .groupWrapper5,
+  .vectorIcon8 {
+    top: 300px;
+  }
+  .vectorIcon8 {
+    height: 62.78%;
+    width: 4.8%;
+    top: 16.67%;
+    right: 95.2%;
+    bottom: 20.56%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .groupWrapper6,
+  .plagiarismPoliciesParent,
+  .vectorIcon9 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 148px;
+    height: 18px;
+  }
+  .groupWrapper6,
+  .vectorIcon9 {
+    top: 343px;
+  }
+  .vectorIcon9 {
+    height: 62.78%;
+    width: 4.58%;
+    top: 16.67%;
+    right: 95.42%;
+    bottom: 20.56%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .groupContainer,
+  .groupWrapper7,
+  .withdrawalPoliciesParent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 155px;
+    height: 18px;
+  }
+  .groupContainer,
+  .groupWrapper7 {
+    top: 386px;
+  }
+  .groupContainer {
+    top: 76px;
+    width: 160px;
+    height: 404px;
+    text-align: center;
+    font-size: var(--font-size-mini);
+    color: var(--color-dimgray);
+    font-family: var(--font-inter);
+  }
+  .authorsDeskParent {
+    position: absolute;
+    top: 26px;
+    left: calc(50% - 109.5px);
+    width: 220px;
+    height: 480px;
+    text-align: left;
+    font-size: var(--font-size-7xl);
+    color: var(--color-black);
+    font-family: var(--font-istok-web);
+  }
+  .aimAndScope,
+  .groupParent {
+    position: absolute;
+    text-align: center;
+  }
+  .groupParent {
+    top: 454px;
+    left: 935px;
+    border-radius: var(--br-base);
+    background-color: var(--color-whitesmoke-100);
+    width: 271px;
+    height: 635px;
+    font-size: var(--font-size-sm);
+    color: var(--color-white);
+  }
+  .aimAndScope {
+    top: 321px;
+    left: calc(50% - 132px);
+    font-size: var(--font-size-17xl);
+    letter-spacing: -0.03em;
+    font-family: var(--font-jura);
+  }
+  .groupInner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--br-5xs);
+    background-color: var(--color-darkslateblue);
+    width: 84px;
+    height: 48px;
+  }
+  .home {
+    position: absolute;
+    top: 15px;
+    left: 17px;
+    display: inline-block;
+    width: 50px;
+  }
+  .rectangleDiv,
+  .rectangleGroup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 84px;
+    height: 48px;
+  }
+  .rectangleDiv {
+    border-radius: var(--br-5xs);
+    background-color: var(--color-darkslateblue);
+    width: 114px;
+  }
+  .aimScope {
+    position: absolute;
+    top: 15px;
+    left: 9px;
+  }
+  .groupChild1,
+  .rectangleContainer {
+    position: absolute;
+    top: 0;
+    left: 96px;
+    width: 114px;
+    height: 48px;
+  }
+  .groupChild1 {
+    left: 0;
+    border-radius: var(--br-5xs);
+    background-color: var(--color-darkslateblue);
+    width: 121px;
+  }
+  .editorialTeam {
+    position: absolute;
+    top: 15px;
+    left: 2.3px;
+    display: inline-block;
+    width: 115.2px;
+  }
+  .rectangleParent1 {
+    position: absolute;
+    top: 0;
+    left: 222px;
+    width: 121px;
+    height: 48px;
+  }
+  .submissions {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+  }
+  .rectangleParent2 {
+    position: absolute;
+    top: 0;
+    left: 355px;
+    width: 114px;
+    height: 48px;
+  }
+  .current {
+    position: absolute;
+    top: 15px;
+    left: 13px;
+  }
+  .groupChild4,
+  .rectangleParent3 {
+    position: absolute;
+    top: 0;
+    left: 481px;
+    width: 84px;
+    height: 48px;
+  }
+  .groupChild4 {
+    left: 0;
+    border-radius: var(--br-5xs);
+    background-color: var(--color-darkslateblue);
+    width: 108.2px;
+  }
+  .archives {
+    position: absolute;
+    top: 15px;
+    left: 3.4px;
+    display: inline-block;
+    width: 103.7px;
+  }
+  .groupChild5,
+  .rectangleParent4 {
+    position: absolute;
+    top: 0;
+    left: 577px;
+    width: 108.2px;
+    height: 48px;
+  }
+  .groupChild5 {
+    left: 0;
+    border-radius: var(--br-5xs);
+    background-color: var(--color-darkslateblue);
+    width: 98px;
+  }
+  .indexing1 {
+    position: absolute;
+    top: 15px;
+    left: 17px;
+  }
+  .groupChild6,
+  .rectangleParent5 {
+    position: absolute;
+    top: 0;
+    left: 697px;
+    width: 98px;
+    height: 48px;
+  }
+  .groupChild6 {
+    left: 0;
+    border-radius: var(--br-5xs);
+    background-color: var(--color-darkslateblue);
+    width: 151px;
+  }
+  .publicationEthics {
+    position: absolute;
+    top: 15px;
+    left: 8px;
+  }
+  .groupParent3,
+  .rectangleParent6,
+  .rectangleParent7 {
+    position: absolute;
+    top: 0;
+    left: 807px;
+    width: 151px;
+    height: 48px;
+  }
+  .groupParent3,
+  .rectangleParent7 {
+    left: 970px;
+    width: 98px;
+  }
+  .groupParent3 {
+    top: 216px;
+    left: 112px;
+    width: 1068px;
+    color: var(--color-white);
+  }
+  .aWidelyIndexed,
+  .internationalJournalOf {
+    position: absolute;
+    top: 85px;
+    left: calc(50% - 478.5px);
+    font-size: var(--font-size-6xl);
+  }
+  .aWidelyIndexed {
+    top: 132px;
+    left: calc(50% - 340.5px);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-black);
+  }
+  .groupChild8 {
+    position: absolute;
+    top: 163px;
+    left: calc(50% - 645.5px);
+    background-color: var(--color-lavender);
+    width: 1280px;
+    height: 35px;
+  }
+  .technologyAndManagement {
+    margin: 0;
+  }
+  .internationalJournalOfContainer {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    display: inline-block;
+    width: 139.1px;
+    height: 15px;
+  }
+  .bookPng1Icon,
+  .cooltext4611840960970061Icon {
+    position: absolute;
+    top: 9.4px;
+    left: 38.2px;
+    width: 67.7px;
+    height: 18.8px;
+    object-fit: cover;
+  }
+  .bookPng1Icon {
+    top: 0;
+    left: 0;
+    width: 38.2px;
+    height: 38.2px;
+  }
+  .cooltext4611840960970061Parent {
+    position: absolute;
+    top: 0;
+    left: 16.3px;
+    width: 105.9px;
+    height: 38.2px;
+  }
+  .logo,
+  .profile {
+    position: absolute;
+  }
+  .logo {
+    top: 0;
+    left: 1px;
+    width: 139.1px;
+    height: 47px;
+  }
+  .profile {
+    top: 36px;
+    left: 1062px;
+    font-size: var(--font-size-sm);
+    color: var(--color-darkslategray-100);
+  }
+  .vectorIcon10 {
+    position: absolute;
+    height: 35.82%;
+    width: 2.17%;
+    top: 5.97%;
+    right: 0.81%;
+    bottom: 58.21%;
+    left: 97.01%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .lineDiv {
+    position: absolute;
+    top: 67px;
+    left: 0;
+    border-top: 1px solid var(--color-dimgray);
+    box-sizing: border-box;
+    width: 1104px;
+    height: 1px;
+  }
+  .logoParent {
+    position: absolute;
+    top: 0;
+    left: 76px;
+    width: 1105px;
+    height: 67px;
+    font-size: var(--font-size-7xs);
+  }
+  .callForPaper1 {
+    position: absolute;
+    top: 172px;
+    right: 0;
+    color: var(--color-darkslategray-100);
+  }
+  .groupParent2,
+  .searchChild {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1291px;
+    height: 264px;
+  }
+  .searchChild {
+    border-radius: var(--br-31xl);
+    background-color: var(--color-whitesmoke-200);
+    width: 448px;
+    height: 48px;
+  }
+  .search1 {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    letter-spacing: 0.03em;
+  }
+  .groupIcon {
+    position: absolute;
+    height: 50%;
+    width: 5.36%;
+    top: 25%;
+    right: 4.24%;
+    bottom: 25%;
+    left: 90.4%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .groupParent1,
+  .search,
+  .searchWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 448px;
+    height: 48px;
+  }
+  .groupParent1,
+  .searchWrapper {
+    top: 8px;
+    left: 421px;
+    color: var(--color-gray);
+  }
+  .groupParent1 {
+    top: 0;
+    left: -5px;
+    width: 1291px;
+    height: 264px;
+    text-align: center;
+    font-size: var(--font-size-mini);
+    color: var(--color-darkslateblue);
+  }
+  .theInternationalJournal {
+    position: absolute;
+    top: 476px;
+    left: 65px;
+    line-height: 24px;
+    display: inline-block;
+    width: 814px;
+    height: 112px;
+  }
+  .ijestmCoversA {
+    margin-block-start: 0;
+    margin-block-end: 10px;
+  }
+  .ijestmCoversAContainer {
+    position: absolute;
+    top: 889px;
+    left: 65px;
+    line-height: 24px;
+    display: inline-block;
+    width: 814px;
+    height: 112px;
+  }
+  .editorijestmcom1 {
+    text-decoration: underline;
+  }
+  .editorijestmcom {
+    color: inherit;
+  }
+  .weInviteResearchersContainer {
+    position: absolute;
+    top: 1411px;
+    left: 65px;
+    line-height: 24px;
+    display: inline-block;
+    width: 814px;
+    height: 112px;
+  }
+  .science2 {
+    margin-bottom: 0;
+  }
+  .science,
+  .technology {
+    position: absolute;
+    top: 925px;
+    left: 70px;
+    line-height: 24px;
+    display: inline-block;
+    width: 814px;
+    height: 112px;
+  }
+  .technology {
+    top: 962px;
+    left: 69px;
+  }
+  .arts,
+  .engineering,
+  .humanities,
+  .mathematics,
+  .socialSciences,
+  .weWelcomeContributions {
+    position: absolute;
+    top: 999px;
+    left: 68px;
+    line-height: 24px;
+    display: inline-block;
+    width: 814px;
+    height: 112px;
+  }
+  .arts,
+  .humanities,
+  .mathematics,
+  .socialSciences,
+  .weWelcomeContributions {
+    top: 1036px;
+  }
+  .humanities,
+  .mathematics,
+  .socialSciences,
+  .weWelcomeContributions {
+    top: 1073px;
+  }
+  .humanities,
+  .socialSciences,
+  .weWelcomeContributions {
+    top: 1110px;
+  }
+  .humanities,
+  .weWelcomeContributions {
+    top: 1147px;
+  }
+  .weWelcomeContributions {
+    top: 1183px;
+    left: 65px;
+    width: 793px;
+    height: 158px;
+  }
+  .fosteringInterdisciplinaryCo {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    padding-left: var(--padding-5xl);
+  }
+  .disseminatingHighQualityResContainer,
+  .facilitatingGlobalKnowledgeContainer,
+  .fosteringInterdisciplinaryCoContainer {
+    position: absolute;
+    top: 571px;
+    left: 65px;
+    line-height: 24px;
+    display: inline-block;
+    width: 814px;
+    height: 100px;
+  }
+  .disseminatingHighQualityResContainer,
+  .facilitatingGlobalKnowledgeContainer {
+    top: 680px;
+    height: 112px;
+  }
+  .facilitatingGlobalKnowledgeContainer {
+    top: 749px;
+  }
+  .aim,
+  .scope {
+    left: 65px;
+    font-size: var(--font-size-7xl);
+    display: inline-block;
+    text-align: left;
+  }
+  .aim {
+    position: absolute;
+    top: 434px;
+    letter-spacing: 0.03em;
+    width: 61px;
+    height: 30.4px;
+  }
+  .scope {
+    top: 840px;
+    width: 98px;
+    height: 30px;
+  }
+  .contactUs1,
+  .scope,
+  .whyChooseIjestm {
+    position: absolute;
+    letter-spacing: 0.03em;
+  }
+  .whyChooseIjestm {
+    top: 1366px;
+    left: 65px;
+    font-size: var(--font-size-7xl);
+    display: inline-block;
+    text-align: left;
+    width: 304px;
+    height: 30px;
+  }
+  .contactUs1 {
+    top: 0;
+    left: calc(50% - 70px);
+  }
+  .contactUsParent {
+    position: absolute;
+    top: 26px;
+    left: calc(50% - 109.5px);
+    width: 220px;
+    height: 53px;
+  }
+  .queriesijestmcom {
+    color: #0085ff;
+  }
+  .contactUsForContainer {
+    position: absolute;
+    top: 111px;
+    left: 35px;
+    font-size: var(--font-size-xl);
+    line-height: 121.05%;
+    font-weight: 500;
+    font-family: var(--font-inter);
+    text-align: center;
+    display: inline-block;
+    width: 204px;
+    height: 130px;
+  }
+  .frameDiv,
+  .joinUs1 {
+    position: absolute;
+    top: 2171px;
+    font-family: var(--font-istok-web);
+    text-align: left;
+  }
+  .frameDiv {
+    left: 960px;
+    border-radius: var(--br-base);
+    background-color: var(--color-whitesmoke-100);
+    width: 271px;
+    height: 274px;
+    font-size: var(--font-size-7xl);
+  }
+  .joinUs1 {
+    left: calc(50% - 76px);
+    font-size: var(--font-size-26xl);
+    letter-spacing: 0.03em;
+  }
+  .weInviteResearchersContainer1 {
+    position: absolute;
+    top: 2271px;
+    left: 49px;
+    font-size: var(--font-size-xl);
+    line-height: 24px;
+    font-family: var(--font-judson);
+    display: inline-block;
+    width: 863px;
+  }
+  .aimScopePageInner {
+    position: absolute;
+    top: 2492px;
+    left: 0;
+    width: 1280px;
+    height: 253px;
+    object-fit: cover;
+  }
+  .aimScopePage {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 3211px;
+    overflow: hidden;
+    text-align: justify;
+    font-size: var(--font-size-lg);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+  /* .footer {
+    position: absolute;
+    top: 367px;
+    left: 469px;
+    width: 341px;
+    height: 19px;
+  }
+  .footer {
+    top: 2284px;
+    left: 0;
+    width: 1280px;
+    height: 418px;
+    text-align: center;
+    color: var(--color-white);
+  }
+  .footerChild {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 640px);
+    background-color: var(--color-darkslategray-200);
+    width: 1280px;
+    height: 418px;
+  }
+  .footerItem {
+    position: absolute;
+    top: 343.5px;
+    left: calc(50% - 548.5px);
+    border-top: 1px solid var(--color-dimgray);
+    box-sizing: border-box;
+    width: 1004px;
+    height: 1px;
+  }
+  .copyrightGroup,
+  .footer {
+    position: absolute;
+    top: 367px;
+    left: 469px;
+    width: 341px;
+    height: 19px;
+  }
+  .footer {
+    top: 2284px;
+    left: 0;
+    width: 1280px;
+    height: 418px;
+    text-align: center;
+    color: var(--color-white);
+  }
+  .copyrightParent {
+    position: absolute;
+    top: 306px;
+    left: 472px;
+    width: 341px;
+    height: 19px;
+  }
+  .copyrightGroup,
+  .footer {
+    position: absolute;
+    top: 367px;
+    left: 469px;
+    width: 341px;
+    height: 19px;
+  }
+  .aitmAll,
+  .copyright,
+  .vectorIcon11 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .aitmAll,
+  .vectorIcon11 {
+    left: 106px;
+  }
+  .aitmAll,
+  .copyright,
+  .vectorIcon11 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .aitmAll,
+  .vectorIcon11 {
+    left: 106px;
+  }
+  .vectorIcon11 {
+    height: 89.47%;
+    width: 4.99%;
+    top: 5.26%;
+    right: 71.55%;
+    bottom: 5.26%;
+    left: 23.46%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .footerChild {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 640px);
+    background-color: var(--color-darkslategray-200);
+    width: 1280px;
+    height: 418px;
+  }
+  .internationalJournalOfEnginParent {
+    position: absolute;
+    top: 26px;
+    left: 46px;
+    width: 355px;
+    height: 257px;
+  }
+  .internationalJournalOfContainer1 {
+    position: absolute;
+    top: 74px;
+    left: 0;
+  }
+  .ifYouAre {
+    margin: 0;
+  }
+  .vectorParent {
+    position: absolute;
+    height: 7.78%;
+    width: 36.34%;
+    top: 92.22%;
+    right: 31.83%;
+    bottom: 0;
+    left: 31.83%;
+  }
+  .groupIcon1,
+  .vectorIcon12,
+  .vectorIcon13,
+  .vectorIcon14 {
+    position: absolute;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .vectorIcon12 {
+    height: 90%;
+    width: 13.95%;
+    top: 5%;
+    right: 0;
+    bottom: 5%;
+    left: 86.05%;
+  }
+  .groupIcon1,
+  .vectorIcon12,
+  .vectorIcon13,
+  .vectorIcon14 {
+    position: absolute;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .groupIcon1,
+  .vectorIcon13,
+  .vectorIcon14 {
+    height: 100%;
+    width: 15.5%;
+    top: 0;
+    bottom: 0;
+  }
+  .groupIcon1 {
+    right: 27.13%;
+    left: 57.36%;
+    object-fit: cover;
+  }
+  .groupIcon1,
+  .vectorIcon12,
+  .vectorIcon13,
+  .vectorIcon14 {
+    position: absolute;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .groupIcon1,
+  .vectorIcon13,
+  .vectorIcon14 {
+    height: 100%;
+    width: 15.5%;
+    top: 0;
+    bottom: 0;
+  }
+
+.vectorIcon13,
+.vectorIcon14 {
+  right: 55.81%;
+  left: 28.68%;
+}
+.groupIcon1,
+.vectorIcon12,
+.vectorIcon13,
+.vectorIcon14 {
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.groupIcon1,
+.vectorIcon13,
+.vectorIcon14 {
+  height: 100%;
+  width: 15.5%;
+  top: 0;
+  bottom: 0;
+}
+.vectorIcon13,
+  .vectorIcon14 {
+    right: 55.81%;
+    left: 28.68%;
+  }
+  .vectorIcon14 {
+    right: 84.5%;
+    left: 0;
+  }
+  .logo1,
+  .rectangleParent8 {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 139.1px;
+    height: 47px;
+  }
+  .rectangleParent8 {
+    left: 102px;
+    width: 152px;
+    height: 59px;
+    font-size: var(--font-size-7xs);
+    color: var(--color-darkgoldenrod);
+  }
+  .groupChild9 {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    border-radius: var(--br-xs);
+    background-color: var(--color-white);
+    width: 152px;
+    height: 55px;
+  }
+  .logo1,
+  .rectangleParent8 {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 139.1px;
+    height: 47px;
+  }
+  .internationalJournalOfContainer {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    display: inline-block;
+    width: 139.1px;
+    height: 15px;
+  }
+  .internationalJournalOfContainer1 {
+    position: absolute;
+    top: 74px;
+    left: 0;
+  }
+  .ifYouAre {
+    margin: 0;
+  }
+  .cooltext4611840960970061Parent {
+    position: absolute;
+    top: 0;
+    left: 16.3px;
+    width: 105.9px;
+    height: 38.2px;
+  }
+  .bookPng1Icon,
+  .cooltext4611840960970061Icon {
+    position: absolute;
+    top: 9.4px;
+    left: 38.2px;
+    width: 67.7px;
+    height: 18.8px;
+    object-fit: cover;
+  }
+  .bookPng1Icon1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 38.2px;
+    height: 38.2px;
+    object-fit: cover;
+    mix-blend-mode: normal;
+  }
+  .ijestmIsA {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    font-size: var(--font-size-smi);
+    line-height: 24px;
+    font-family: var(--font-judson);
+    color: var(--color-darkgray);
+    display: inline-block;
+    width: 355px;
+  }
+
+.footerItem {
+  position: absolute;
+  top: 343.5px;
+  left: calc(50% - 548.5px);
+  border-top: 1px solid var(--color-dimgray);
+  box-sizing: border-box;
+  width: 1004px;
+  height: 1px;
+}
+.groupParent2,
+.quickLinks {
+  position: absolute;
+  top: 0;
+  left: 14px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+}
+.groupParent2 {
+  top: 40px;
+  left: 787px;
+  width: 121px;
+  height: 230px;
+  font-size: var(--font-size-sm);
+  color: var(--color-darkgray);
+  font-family: var(--font-judson);
+}
+.authorsGuidelinesGroup,
+  .reviewerGuidelines1 {
+    position: absolute;
+    top: 180px;
+    left: 0;
+  }
+  .authorsGuidelinesGroup {
+    top: 34px;
+    width: 121px;
+    height: 196px;
+  }
+  .authorsGuidelines1 {
+    position: absolute;
+    top: 0;
+    left: 3px;
+  }
+  .callForPaper2,
+  .onlineSubmission1 {
+    position: absolute;
+    top: 36px;
+    left: 5px;
+  }
+  .callForPaper2,
+  .onlineSubmission1 {
+    position: absolute;
+    top: 36px;
+    left: 5px;
+  }
+  .callForPaper2 {
+    top: 72px;
+    left: 20px;
+  }
+  .publicationEthics1,
+  .reviewerPolicy1 {
+    position: absolute;
+    top: 108px;
+    left: 7px;
+  }
+  .publicationEthics1,
+  .reviewerPolicy1 {
+    position: absolute;
+    top: 108px;
+    left: 7px;
+  }
+  .reviewerPolicy1 {
+    top: 144px;
+    left: 13px;
+  }
+  .authorsGuidelinesGroup,
+  .reviewerGuidelines1 {
+    position: absolute;
+    top: 180px;
+    left: 0;
+  }
+  .groupParent2,
+  .quickLinks {
+    position: absolute;
+    top: 0;
+    left: 14px;
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    color: var(--color-white);
+  }
+  .acceptsOriginalAndHighQualParent {
+    position: absolute;
+    top: 62px;
+    left: 974px;
+    width: 254px;
+    height: 186px;
+    font-size: var(--font-size-sm);
+    color: var(--color-darkgray);
+    font-family: var(--font-judson);
+  }
+  .acceptsOriginalAndContainer {
+    position: absolute;
+    top: 42px;
+    left: 0;
+    line-height: 24px;
+    display: inline-block;
+    width: 254px;
+  }
+  .acceptsOriginalAndHighQual {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    padding-left: var(--padding-lgi);
+  }
+  .acceptsOriginalAndHighQualParent {
+    position: absolute;
+    top: 62px;
+    left: 974px;
+    width: 254px;
+    height: 186px;
+    font-size: var(--font-size-sm);
+    color: var(--color-darkgray);
+    font-family: var(--font-judson);
+  }
+  .researchInterestsList {
+    margin-bottom: 0;
+  }
+  .feelFreeToContactUsIfYoParent {
+    position: absolute;
+    top: 96px;
+    left: 467px;
+    width: 254px;
+    height: 117px;
+    font-size: var(--font-size-sm);
+    color: var(--color-darkgray);
+    font-family: var(--font-judson);
+  }
+  .feelFreeTo {
+    position: absolute;
+    top: 37px;
+    left: 0;
+    line-height: 24px;
+    display: inline-block;
+    width: 254px;
+  }
+  .feelFreeToContactUsIfYoParent {
+    position: absolute;
+    top: 96px;
+    left: 467px;
+    width: 254px;
+    height: 117px;
+    font-size: var(--font-size-sm);
+    color: var(--color-darkgray);
+    font-family: var(--font-judson);
+  }
+  .contactUs2 {
+    position: absolute;
+    top: 0;
+    left: 84px;
+    font-size: var(--font-size-base);
+    font-family: var(--font-inter);
+    color: var(--color-white);
+  }
+  .vectorGroup {
+    position: absolute;
+    height: 20.51%;
+    width: 54.33%;
+    top: 79.49%;
+    right: 22.83%;
+    bottom: 0;
+    left: 22.83%;
+  }
+  .vectorIcon15 {
+    position: absolute;
+    height: 66.67%;
+    width: 14.49%;
+    top: 25%;
+    right: 85.51%;
+    bottom: 8.33%;
+    left: 0;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .editorijestmcom {
+    position: absolute;
+    top: 0;
+    left: 28px;
+    line-height: 24px;
+  }
+  .copyrightGroup,
+  .footer {
+    position: absolute;
+    top: 367px;
+    left: 469px;
+    width: 341px;
+    height: 19px;
+  }
+  .aitmAll,
+  .copyright,
+  .vectorIcon11 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .aitmAll,
+  .copyright,
+  .vectorIcon11 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .aitmAll,
+  .vectorIcon11 {
+    left: 106px;
+  }
+  .aitmAll,
+  .copyright,
+  .vectorIcon11 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .aitmAll,
+  .vectorIcon11 {
+    left: 106px;
+  }
+  .vectorIcon11 {
+    height: 89.47%;
+    width: 4.99%;
+    top: 5.26%;
+    right: 71.55%;
+    bottom: 5.26%;
+    left: 23.46%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  } */

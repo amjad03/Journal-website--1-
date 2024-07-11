@@ -1,0 +1,185 @@
+.emailAddress {
+  position: relative;
+  letter-spacing: 0.03em;
+}
+.frameChild {
+  height: 51px;
+  width: 210px;
+  position: relative;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-crimson);
+  box-sizing: border-box;
+  display: none;
+}
+.inTitleCase {
+  width: 97.6px;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-base);
+  background-color: transparent;
+  height: 19px;
+  position: relative;
+  letter-spacing: 0.03em;
+  color: var(--color-dimgray-100);
+  text-align: left;
+  display: inline-block;
+  padding: 0;
+  z-index: 1;
+}
+.frameItem,
+.rectangleParent {
+  border-radius: var(--br-11xs);
+  background-color: var(--color-whitesmoke-200);
+}
+.rectangleParent {
+  align-self: stretch;
+  border-left: 5px solid var(--color-crimson);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-base) var(--padding-mid);
+}
+.frameItem {
+  height: 51px;
+  width: 210px;
+  position: relative;
+  border-left: 5px solid var(--color-darkgray-200);
+  box-sizing: border-box;
+  display: none;
+}
+.inTitleCase1 {
+  position: relative;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  min-width: 97.6px;
+  z-index: 1;
+}
+.frameInner,
+.rectangleGroup {
+  border-radius: var(--br-11xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-darkgray-200);
+}
+.rectangleGroup {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-base) var(--padding-mid);
+  white-space: nowrap;
+}
+.frameInner {
+  height: 51px;
+  width: 210px;
+  position: relative;
+  box-sizing: border-box;
+  display: none;
+}
+.inTitleCase2 {
+  position: relative;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  min-width: 97.6px;
+  z-index: 1;
+}
+.rectangleContainer,
+.rectangleDiv {
+  border-radius: var(--br-11xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-darkgray-200);
+}
+.rectangleContainer {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-base) var(--padding-mid);
+  white-space: nowrap;
+}
+.rectangleDiv {
+  height: 51px;
+  width: 210px;
+  position: relative;
+  box-sizing: border-box;
+  display: none;
+}
+.inTitleCase3 {
+  position: relative;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  min-width: 97.6px;
+  z-index: 1;
+}
+.frameChild1,
+.groupDiv {
+  border-radius: var(--br-11xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-darkgray-200);
+}
+.groupDiv {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-base) var(--padding-mid);
+  white-space: nowrap;
+}
+.frameChild1 {
+  height: 51px;
+  width: 210px;
+  position: relative;
+  box-sizing: border-box;
+  display: none;
+}
+.inTitleCase4 {
+  position: relative;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  min-width: 97.6px;
+  z-index: 1;
+}
+.frameParent,
+.inputRows,
+.rectangleParent1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleParent1 {
+  align-self: stretch;
+  border-radius: var(--br-11xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-darkgray-200);
+  flex-direction: row;
+  padding: var(--padding-base) var(--padding-mid);
+  white-space: nowrap;
+}
+.frameParent,
+.inputRows {
+  flex-direction: column;
+}
+.frameParent {
+  align-self: stretch;
+  gap: var(--gap-mini);
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray-100);
+}
+.inputRows {
+  width: 210px;
+  gap: var(--gap-4xs);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 450px) {
+  .emailAddress {
+    font-size: var(--font-size-base);
+  }
+}

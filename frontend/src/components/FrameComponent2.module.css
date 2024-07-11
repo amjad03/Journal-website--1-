@@ -1,0 +1,208 @@
+.ijestmOpenAccessContainer {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.03em;
+  font-family: inherit;
+}
+.openAccessIcon {
+  height: 173.9px;
+  width: 161.8px;
+  position: absolute;
+  margin: 0 !important;
+  right: -153.8px;
+  bottom: -57.9px;
+  object-fit: contain;
+}
+.ijestmEmpowersResearchers {
+  margin: 0;
+}
+.openAccessAgreements,
+.openAccessPublishing {
+  margin-bottom: 0;
+}
+.openAccessPublishingOptions {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: var(--padding-8xl);
+}
+.ijestmEmpowersResearchersContainer {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  font-family: inherit;
+}
+.openAccessLink,
+.openAccessLinkWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.openAccessLink {
+  flex: 1;
+  position: relative;
+}
+.openAccessLinkWrapper {
+  align-self: stretch;
+  padding: 0 0 0 var(--padding-7xs);
+  box-sizing: border-box;
+}
+.frameChild {
+  height: 60px;
+  width: 278px;
+  position: relative;
+  border-radius: var(--br-7xs);
+  background: linear-gradient(270deg, #0085ff, #036);
+  display: none;
+}
+.learnMore {
+  text-decoration: none;
+  position: relative;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  text-align: center;
+  z-index: 1;
+}
+.rectangleParent {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-lg) var(--padding-51xl) var(--padding-lg)
+    var(--padding-52xl);
+  background-color: transparent;
+  border-radius: var(--br-7xs);
+  background: linear-gradient(270deg, #0085ff, #036);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+.openAccessDescription {
+  align-self: stretch;
+  gap: var(--gap-4xl);
+  text-align: left;
+  font-size: var(--font-size-xl);
+}
+.openAccessDescription,
+.openAccessHeader,
+.openAccessTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.openAccessHeader {
+  align-self: stretch;
+  gap: var(--gap-xs);
+}
+.openAccessTitle {
+  width: 482px;
+  padding: var(--padding-smi) 0 0;
+  box-sizing: border-box;
+  min-width: 482px;
+}
+.learningBro1Icon {
+  height: 267px;
+  width: 267px;
+  position: relative;
+  object-fit: contain;
+  display: none;
+}
+.learningImageChild {
+  height: 278px;
+  width: 426px;
+  position: relative;
+  border-radius: var(--br-7xs);
+  background: linear-gradient(270deg, #0085ff, #036);
+  display: none;
+  max-width: 100%;
+}
+.learningBro2Icon {
+  height: 267px;
+  width: 267px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: contain;
+  z-index: 1;
+}
+.learningImage {
+  width: 426px;
+  border-radius: var(--br-7xs);
+  background: linear-gradient(270deg, #0085ff, #036);
+  justify-content: flex-end;
+  padding: var(--padding-8xs) var(--padding-smi) var(--padding-7xs);
+  min-width: 426px;
+}
+.learningImage,
+.openAccessContent,
+.openAccessContentWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.openAccessContent {
+  flex: 1;
+  border-radius: var(--br-base);
+  background-color: var(--color-whitesmoke-100);
+  justify-content: space-between;
+  padding: var(--padding-xl) var(--padding-lgi) var(--padding-lgi)
+    var(--padding-49xl);
+  gap: var(--gap-xl);
+}
+.openAccessContentWrapper {
+  align-self: stretch;
+  justify-content: flex-end;
+  padding: 0 var(--padding-28xl) var(--padding-7xs) var(--padding-29xl);
+  text-align: center;
+  font-size: var(--font-size-7xl);
+  color: var(--color-black);
+  font-family: var(--font-istok-web);
+}
+@media screen and (max-width: 1225px) {
+  .learningBro2Icon,
+  .learningImage,
+  .openAccessTitle {
+    flex: 1;
+  }
+  .openAccessContent {
+    flex-wrap: wrap;
+    padding-left: var(--padding-15xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .learningImage,
+  .openAccessTitle {
+    min-width: 100%;
+  }
+  .openAccessContentWrapper {
+    padding-left: var(--padding-5xl);
+    padding-right: var(--padding-4xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .ijestmOpenAccessContainer {
+    font-size: var(--font-size-2xl);
+  }
+  .ijestmEmpowersResearchersContainer {
+    font-size: var(--font-size-base);
+  }
+  .rectangleParent {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,54 @@
+.citydistrict {
+  position: relative;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  min-width: 119px;
+}
+.frameChild {
+  height: 51px;
+  width: 200px;
+  position: relative;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-crimson);
+  box-sizing: border-box;
+  display: none;
+}
+.enterCityName {
+  position: relative;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  min-width: 128px;
+  z-index: 1;
+}
+.contactInfo,
+.rectangleParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.rectangleParent {
+  align-self: stretch;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-whitesmoke-200);
+  border-left: 5px solid var(--color-crimson);
+  flex-direction: row;
+  padding: var(--padding-base) var(--padding-xl);
+  white-space: nowrap;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray-100);
+}
+.contactInfo {
+  width: 200px;
+  flex-direction: column;
+  gap: var(--gap-smi);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 450px) {
+  .citydistrict {
+    font-size: var(--font-size-base);
+  }
+}

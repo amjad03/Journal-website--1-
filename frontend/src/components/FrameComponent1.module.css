@@ -1,0 +1,61 @@
+.frameChild {
+  margin-top: -38px;
+  margin-right: -48px;
+  width: 203px;
+  height: 17px;
+  position: relative;
+  background-color: var(--color-darkslateblue);
+  flex-shrink: 0;
+}
+.lifeBiomedical,
+.sciences {
+  margin: 0;
+}
+.lifeBiomedicalContainer {
+  position: relative;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+.materialsSciencesChild {
+  height: 1px;
+  flex: 1;
+  position: relative;
+  border-top: 1px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+}
+.materialsSciences {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 var(--padding-base) 0 var(--padding-mid);
+}
+.rectangleParent {
+  height: 101px;
+  width: 199px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-11xs);
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-6xl) var(--padding-27xl) var(--padding-lgi)
+    var(--padding-26xl);
+  box-sizing: border-box;
+  gap: var(--gap-2xl-5);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-dimgray-200);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 450px) {
+  .rectangleParent {
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}
