@@ -1,7 +1,40 @@
+import React, { useEffect, useState } from 'react';
 import PropTypes from "prop-types";
 import styles from "./Header.module.css";
+import { db } from '../../../../backend/firebase'; // Adjust the import according to your firebase configuration file
+import { doc, getDoc } from 'firebase/firestore/lite';
+
 
 const Header = ({ className = "" }) => {
+  const [currentData, setCurrentData] = useState(null);
+
+  let volume = '';
+  let issue = '';
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // Fetch current document
+      const currentDoc = await getDoc(doc(db, 'Current', 'current'));
+      const currentData = currentDoc.data();
+      volume = currentData.volume;
+      issue = currentData.issue;
+      // console.log(currentData);
+      setCurrentData(currentData);
+    };
+    fetchData();
+  }, []);
+
+  const formatDateRange = (issueId) => {
+    const dateRanges = {
+      'Issue1': 'January-March 2024',
+      'Issue2': 'April-June 2024',
+      'Issue3': 'July-September 2024',
+      'Issue4': 'Octorber-December 2024',
+      // Add more mappings here
+    };
+    return dateRanges[issueId] || 'Unknown Date Range';
+  };
+
   return (
     <header className={[styles.header, className].join(" ")}>
       <nav className={styles.logoBar}>
@@ -53,7 +86,7 @@ const Header = ({ className = "" }) => {
               src="/vector.svg"
             />
           </div>
-          <a className={styles.profile}>Profile</a>
+          <a href="/admin-panel" className={styles.profile}>Profile</a>
         </div>
       </nav>
       <div className={styles.headerSeparator}>
@@ -73,7 +106,8 @@ const Header = ({ className = "" }) => {
           </div>
         </div>
         <div className={styles.callForPaper + " " + styles.marquee}>
-          Call for paper Volume 6 Issue 3 May-2024 * Submit your research
+          {currentData != null ? `Call for paper Volume ${currentData.volume} Issue ${currentData.issue} ${formatDateRange('Issue'+currentData.issue)} * Submit your research`
+          : ''}
         </div>
       </div>
       <div className={styles.navbar}>

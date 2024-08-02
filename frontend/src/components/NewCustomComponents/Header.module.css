@@ -1,3 +1,4 @@
+
 .cooltext4611840960970061Icon {
   height: 18.8px;
   width: 67.7px;
@@ -210,12 +211,12 @@
   z-index: 1;
 }
 .slogan {
-  margin-right: -110px;
-  width: 986px;
+  /* margin-right: -110px;
+  width: 986px; */
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   padding: 0 0 var(--padding-xs);
   box-sizing: border-box;
   gap: var(--gap-2xl);
@@ -501,8 +502,8 @@
 .header {
   align-self: stretch;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   padding: 0 var(--padding-79xl) var(--padding-23xl) var(--padding-58xl);
   gap: var(--gap-sm);
   text-align: center;

@@ -12,6 +12,7 @@ import SubmitPaperPage from "./pages/SubmitPaperPage";
 import Home from "./pages/Home";
 import AimScopePage from "./pages/AimScopePage";
 import EditorialTeamPage from "./pages/EditorialTeamPage";
+import AdminPanel from "./pages/AdminPanel";
 
 function App() {
   const action = useNavigationType();
@@ -74,6 +75,8 @@ function App() {
       <Route path="/paper-detail-page" element={<PaperDetailPage />} />
       <Route path="/aim-scope-page" element={<AimScopePage/>} />
       <Route path="/editorial-team-page" element={<EditorialTeamPage />} />
+
+      <Route path="/admin-panel" element={<AdminPanel />} />
       
     </Routes>
   );

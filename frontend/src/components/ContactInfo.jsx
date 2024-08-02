@@ -7,7 +7,13 @@ const ContactInfo = ({ className = "", cityDistrict }) => {
       <div className={styles.citydistrict}>{cityDistrict}</div>
       <div className={styles.rectangleParent}>
         <div className={styles.frameChild} />
-        <div className={styles.enterCityName}>Enter City name</div>
+        <div className={styles.enterCityName}>
+        <input style={{ width: '100%',outline: 'none', border: 'none', backgroundColor: '#ebebebeb', padding: '8px', fontSize:'18px', forcedColorAdjust: 'none'}}
+              className={styles.pleaseWriteIn}
+              placeholder={cityDistrict}
+              type="text"
+            />
+        </div>
       </div>
     </div>
   );

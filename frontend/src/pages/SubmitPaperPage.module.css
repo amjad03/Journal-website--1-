@@ -74,7 +74,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-start;
   padding: var(--padding-lgi) 0 0;
   box-sizing: border-box;
@@ -82,6 +82,21 @@
   line-height: normal;
   letter-spacing: normal;
 }
+
+/* src/CustomGrid.css */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  background-color: #626262;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
 @media screen and (max-width: 750px) {
   .formFields {
     gap: var(--gap-5xl);

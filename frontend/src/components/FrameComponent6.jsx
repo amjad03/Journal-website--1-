@@ -9,7 +9,7 @@ const FrameComponent6 = ({ className = "" }) => {
     <section className={[styles.topNavbarParent, className].join(" ")}>
       <div className={styles.topNavbar}>
         <div className={styles.navbarItems}>
-          <header className={styles.navbarItem}>
+          {/* <header className={styles.navbarItem}>
             <div className={styles.navbarItem1}>
               <nav className={styles.navbarItem2}>
                 <div className={styles.navbarItem3}>
@@ -86,10 +86,10 @@ const FrameComponent6 = ({ className = "" }) => {
             </div>
               </div>
             </div>
-          </header>
+          </header> */}
           <div className={styles.content}>
             <div className={styles.main}>
-              <div className={styles.menu}>
+              {/* <div className={styles.menu}>
                 <div className={styles.rectangleParent}>
                   <div className={styles.frameChild} />
                   <a className={styles.home}>Home</a>
@@ -126,7 +126,7 @@ const FrameComponent6 = ({ className = "" }) => {
                   <div className={styles.frameChild5} />
                   <a className={styles.contactUs}>Contact US</a>
                 </button>
-              </div>
+              </div> */}
               <div className={styles.submission}>
                 <h1 className={styles.submitResearchPaper}>
                   Submit Research Paper
@@ -191,12 +191,12 @@ const FrameComponent6 = ({ className = "" }) => {
           </ul>
         </h3>
       </div>
-      <div className={styles.rectangleParent5}>
+      {/* <div className={styles.rectangleParent5}>
         <div className={styles.frameChild6} />
         <h3 className={styles.pleaseFillIn}>
           Please fill in the details of the research paper.
         </h3>
-      </div>
+      </div> */}
     </section>
   );
 };
