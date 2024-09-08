@@ -20,7 +20,7 @@ const Home = () => {
         alt=""
         src="/screenshot-20240629-at-63733pm-1@2x.png"
       />
-      <div className={styles.homePageChild} />
+      {/* <div className={styles.homePageChild} /> */}
       <Header />
       <Hero />
       <div className={styles.chomskyResearch}>
@@ -30,7 +30,7 @@ const Home = () => {
       <FrameComponent2 />
       <FrameComponent3 />
       <FrameComponent4 />
-      <section className={styles.chomskyResearch1}>
+      {/* <section className={styles.chomskyResearch1}>
         <div className={styles.chomskyTitleParent}>
           <ChomskyTitle
             noamChomskysContributionT="Noam Chomsky's Contribution to Linguistics"
@@ -54,7 +54,8 @@ const Home = () => {
             authorsAshankChaudharySha="Author(s): Ahaan Mehta"
           />
         </div>
-      </section>
+      </section> */}
+
       <div className={styles.chomskyResearch3}>
         <div className={styles.chomskyResearchChild} />
       </div>
@@ -71,6 +72,7 @@ const Home = () => {
           src="/rectangle-30@2x.png"
         />
       </section>
+      {/* <img src="../../public/images/Frame 19.png" alt="" /> */}
       <Footer
         cooltext4611840960970061="/cooltext461184096097006-11@2x.png"
         bookPng1="/bookpng-11@2x.png"

@@ -1,0 +1,603 @@
+-- Create tables
+CREATE TABLE User (
+    UserID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Email VARCHAR(100) UNIQUE,
+    Phone VARCHAR(15),
+    UserType ENUM('Host', 'Guest', 'Admin')
+);
+
+CREATE TABLE Profile (
+    ProfileID INT PRIMARY KEY,
+    UserID INT,
+    Bio TEXT,
+    PhotoURL VARCHAR(255),
+    FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
+
+CREATE TABLE Listing (
+    ListingID INT PRIMARY KEY,
+    HostID INT,
+    Title VARCHAR(100),
+    Description TEXT,
+    Price DECIMAL(10, 2),
+    Location VARCHAR(255),
+    PhotoURL VARCHAR(255),
+    FOREIGN KEY (HostID) REFERENCES User(UserID)
+);
+
+CREATE TABLE Booking (
+    BookingID INT PRIMARY KEY,
+    GuestID INT,
+    ListingID INT,
+    StartDate DATE,
+    EndDate DATE,
+    TotalPrice DECIMAL(10, 2),
+    FOREIGN KEY (GuestID) REFERENCES User(UserID),
+    FOREIGN KEY (ListingID) REFERENCES Listing(ListingID)
+);
+
+CREATE TABLE Review (
+    ReviewID INT PRIMARY KEY,
+    ReviewerID INT,
+    ReviewedUserID INT,
+    Rating INT CHECK (Rating >= 1 AND Rating <= 5),
+    Comment TEXT,
+    Date DATE,
+    FOREIGN KEY (ReviewerID) REFERENCES User(UserID),
+    FOREIGN KEY (ReviewedUserID) REFERENCES User(UserID)
+);
+
+CREATE TABLE Payment (
+    PaymentID INT PRIMARY KEY,
+    BookingID INT,
+    Amount DECIMAL(10, 2),
+    Date DATE,
+    Status ENUM('Pending', 'Completed', 'Failed'),
+    FOREIGN KEY (BookingID) REFERENCES Booking(BookingID)
+);
+
+CREATE TABLE SocialNetwork (
+    SocialNetworkID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    URL VARCHAR(255)
+);
+
+CREATE TABLE UserSocialNetwork (
+    UserSocialNetworkID INT PRIMARY KEY,
+    UserID INT,
+    SocialNetworkID INT,
+    SocialNetworkProfileURL VARCHAR(255),
+    FOREIGN KEY (UserID) REFERENCES User(UserID),
+    FOREIGN KEY (SocialNetworkID) REFERENCES SocialNetwork(SocialNetworkID)
+);
+
+CREATE TABLE Message (
+    MessageID INT PRIMARY KEY,
+    SenderID INT,
+    ReceiverID INT,
+    Content TEXT,
+    Timestamp TIMESTAMP,
+    FOREIGN KEY (SenderID) REFERENCES User(UserID),
+    FOREIGN KEY (ReceiverID) REFERENCES User(UserID)
+);
+
+CREATE TABLE Availability (
+    AvailabilityID INT PRIMARY KEY,
+    ListingID INT,
+    Date DATE,
+    IsAvailable BOOLEAN,
+    FOREIGN KEY (ListingID) REFERENCES Listing(ListingID)
+);
+
+CREATE TABLE Amenity (
+    AmenityID INT PRIMARY KEY,
+    Name VARCHAR(100)
+);
+
+CREATE TABLE ListingAmenity (
+    ListingAmenityID INT PRIMARY KEY,
+    ListingID INT,
+    AmenityID INT,
+    FOREIGN KEY (ListingID) REFERENCES Listing(ListingID),
+    FOREIGN KEY (AmenityID) REFERENCES Amenity(AmenityID)
+);
+
+CREATE TABLE City (
+    CityID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    State VARCHAR(100),
+    Country VARCHAR(100)
+);
+
+CREATE TABLE Host (
+    HostID INT PRIMARY KEY,
+    UserID INT,
+    Phone VARCHAR(15),
+    FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
+
+CREATE TABLE Guest (
+    GuestID INT PRIMARY KEY,
+    UserID INT,
+    FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
+
+CREATE TABLE Admin (
+    AdminID INT PRIMARY KEY,
+    UserID INT,
+    FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
+
+CREATE TABLE Reservation (
+    ReservationID INT PRIMARY KEY,
+    BookingID INT,
+    ReservationDate DATE,
+    FOREIGN KEY (BookingID) REFERENCES Booking(BookingID)
+);
+
+CREATE TABLE Maintenance (
+    MaintenanceID INT PRIMARY KEY,
+    ListingID INT,
+    Description TEXT,
+    DateScheduled DATE,
+    Status ENUM('Pending', 'Completed'),
+    FOREIGN KEY (ListingID) REFERENCES Listing(ListingID)
+);
+
+CREATE TABLE ListingPhoto (
+    ListingPhotoID INT PRIMARY KEY,
+    ListingID INT,
+    PhotoURL VARCHAR(255),
+    FOREIGN KEY (ListingID) REFERENCES Listing(ListingID)
+);
+
+CREATE TABLE Coupon (
+    CouponID INT PRIMARY KEY,
+    Code VARCHAR(50),
+    DiscountPercentage DECIMAL(5, 2),
+    ExpiryDate DATE
+);
+
+CREATE TABLE BookingCoupon (
+    BookingCouponID INT PRIMARY KEY,
+    BookingID INT,
+    CouponID INT,
+    FOREIGN KEY (BookingID) REFERENCES Booking(BookingID),
+    FOREIGN KEY (CouponID) REFERENCES Coupon(CouponID)
+);
+
+-- Insert sample data
+INSERT INTO User (UserID, Name, Email, Phone, UserType) VALUES
+(1, 'Alice Johnson', 'alice@example.com', '1234567890', 'Host'),
+(2, 'Bob Smith', 'bob@example.com', '0987654321', 'Guest'),
+(3, 'Carol Williams', 'carol@example.com', '1122334455', 'Admin');
+
+INSERT INTO Profile (ProfileID, UserID, Bio, PhotoURL) VALUES
+(1, 1, 'Experienced host with great apartments.', 'http://example.com/alice.jpg'),
+(2, 2, 'Loves traveling and exploring new places.', 'http://example.com/bob.jpg');
+
+INSERT INTO Listing (ListingID, HostID, Title, Description, Price, Location, PhotoURL) VALUES
+(1, 1, 'Cozy Apartment', 'A nice and cozy apartment in the city center.', 100.00, 'New York', 'http://example.com/apartment1.jpg');
+
+INSERT INTO Booking (BookingID, GuestID, ListingID, StartDate, EndDate, TotalPrice) VALUES
+(1, 2, 1, '2024-08-01', '2024-08-07', 700.00);
+
+INSERT INTO Review (ReviewID, ReviewerID, ReviewedUserID, Rating, Comment, Date) VALUES
+(1, 2, 1, 5, 'Great host and a lovely apartment!', '2024-08-08');
+
+INSERT INTO Payment (PaymentID, BookingID, Amount, Date, Status) VALUES
+(1, 1, 700.00, '2024-08-01', 'Completed');
+
+INSERT INTO SocialNetwork (SocialNetworkID, Name, URL) VALUES
+(1, 'Facebook', 'https://www.facebook.com'),
+(2, 'Twitter', 'https://www.twitter.com');
+
+INSERT INTO UserSocialNetwork (UserSocialNetworkID, UserID, SocialNetworkID, SocialNetworkProfileURL) VALUES
+(1, 1, 1, 'https://www.facebook.com/alice'),
+(2, 2, 2, 'https://www.twitter.com/bob');
+
+INSERT INTO Message (MessageID, SenderID, ReceiverID, Content, Timestamp) VALUES
+(1, 2, 1, 'I am interested in booking your apartment.', '2024-07-25 10:00:00');
+
+INSERT INTO Availability (AvailabilityID, ListingID, Date, IsAvailable) VALUES
+(1, 1, '2024-08-01', TRUE),
+(2, 1, '2024-08-02', TRUE);
+
+INSERT INTO Amenity (AmenityID, Name) VALUES
+(1, 'WiFi'),
+(2, 'Parking');
+
+INSERT INTO ListingAmenity (ListingAmenityID, ListingID, AmenityID) VALUES
+(1, 1, 1),
+(2, 1, 2);
+
+INSERT INTO City (CityID, Name, State, Country) VALUES
+(1, 'New York', 'New York', 'USA');
+
+INSERT INTO Host (HostID, UserID, Phone) VALUES
+(1, 1, '1234567890');
+
+INSERT INTO Guest (GuestID, UserID) VALUES
+(1, 2);
+
+INSERT INTO Admin (AdminID, UserID) VALUES
+(1, 3);
+
+INSERT INTO Reservation (ReservationID, BookingID, ReservationDate) VALUES
+(1, 1, '2024-07-20');
+
+INSERT INTO Maintenance (MaintenanceID, ListingID, Description, DateScheduled, Status) VALUES
+(1, 1, 'Plumbing maintenance', '2024-07-30', 'Pending');
+
+INSERT INTO ListingPhoto (ListingPhotoID, ListingID, PhotoURL) VALUES
+(1, 1, 'http://example.com/apartment1.jpg');
+
+INSERT INTO Coupon (CouponID, Code, DiscountPercentage, ExpiryDate) VALUES
+(1, 'SUMMER20', 20.00, '2024-09-30');
+
+INSERT INTO BookingCoupon (BookingCouponID, BookingID, CouponID) VALUES
+(1, 1, 1);
+
+
+
+1. User 
+
+-- =============================================== 
+-- Table: User 
+-- =============================================== 
+-- This table stores basic information about all users on the platform. 
+-- Columns: 
+-- - UserID: A unique identifier for each user (Primary Key). 
+-- - Email: The email address associated with the user. 
+-- - PasswordHash: The hashed password for authentication. 
+-- - CreatedAt: The timestamp when the user account was created. 
+-- - UserType: The type of user (e.g., guest, host, admin). 
+-- Relationships: 
+-- - None 
+-- =============================================== 
+ 
+
+2. Profile 
+
+-- =============================================== 
+-- Table: Profile 
+-- =============================================== 
+-- This table contains detailed profile information for each user. 
+-- Columns: 
+-- - ProfileID: A unique identifier for each profile (Primary Key). 
+-- - UserID: A foreign key referencing the User table, linking the profile to a specific user. 
+-- - FirstName: The first name of the user. 
+-- - LastName: The last name of the user. 
+-- - DateOfBirth: The date of birth of the user. 
+-- - ProfilePicture: The URL of the user’s profile picture. 
+-- - Bio: A short biography of the user. 
+-- Relationships: 
+-- - UserID is a foreign key referencing User(UserID). 
+-- =============================================== 
+ 
+
+3. Listing 
+
+-- =============================================== 
+-- Table: Listing 
+-- =============================================== 
+-- This table stores information about property listings available for booking. 
+-- Columns: 
+-- - ListingID: A unique identifier for each listing (Primary Key). 
+-- - HostID: A foreign key referencing the Host table, indicating who owns the listing. 
+-- - Title: The title of the listing. 
+-- - Description: A detailed description of the listing. 
+-- - PricePerNight: The cost per night to stay at the listing. 
+-- - Address: The physical address of the listing. 
+-- - CityID: A foreign key referencing the City table, indicating the location of the listing. 
+-- - CreatedAt: The timestamp when the listing was created. 
+-- Relationships: 
+-- - HostID is a foreign key referencing Host(HostID). 
+-- - CityID is a foreign key referencing City(CityID). 
+-- =============================================== 
+ 
+
+4. Booking 
+
+-- =============================================== 
+-- Table: Booking 
+-- =============================================== 
+-- This table records all bookings made by guests. 
+-- Columns: 
+-- - BookingID: A unique identifier for each booking (Primary Key). 
+-- - GuestID: A foreign key referencing the Guest table, indicating who made the booking. 
+-- - ListingID: A foreign key referencing the Listing table, indicating the listing being booked. 
+-- - BookingDate: The date when the booking was made. 
+-- - CheckInDate: The scheduled check-in date for the booking. 
+-- - CheckOutDate: The scheduled check-out date for the booking. 
+-- - TotalAmount: The total amount charged for the booking. 
+-- - Status: The current status of the booking (e.g., pending, confirmed, canceled). 
+-- Relationships: 
+-- - GuestID is a foreign key referencing Guest(GuestID). 
+-- - ListingID is a foreign key referencing Listing(ListingID). 
+-- =============================================== 
+ 
+
+5. Review 
+
+-- =============================================== 
+-- Table: Review 
+-- =============================================== 
+-- This table stores reviews left by guests for listings they have stayed at. 
+-- Columns: 
+-- - ReviewID: A unique identifier for each review (Primary Key). 
+-- - GuestID: A foreign key referencing the Guest table, indicating who left the review. 
+-- - ListingID: A foreign key referencing the Listing table, indicating the listing being reviewed. 
+-- - Rating: The rating given to the listing (e.g., 1-5 stars). 
+-- - Comment: The textual review left by the guest. 
+-- - CreatedAt: The timestamp when the review was created. 
+-- Relationships: 
+-- - GuestID is a foreign key referencing Guest(GuestID). 
+-- - ListingID is a foreign key referencing Listing(ListingID). 
+-- =============================================== 
+ 
+
+6. Payment 
+
+-- =============================================== 
+-- Table: Payment 
+-- =============================================== 
+-- This table records payment transactions for bookings. 
+-- Columns: 
+-- - PaymentID: A unique identifier for each payment (Primary Key). 
+-- - BookingID: A foreign key referencing the Booking table, indicating the booking associated with the payment. 
+-- - Amount: The total amount paid. 
+-- - PaymentDate: The date when the payment was made. 
+-- - PaymentMethod: The method used for the payment (e.g., credit card, PayPal). 
+-- - Status: The current status of the payment (e.g., completed, pending, failed). 
+-- Relationships: 
+-- - BookingID is a foreign key referencing Booking(BookingID). 
+-- =============================================== 
+ 
+
+7. Social Network 
+
+-- =============================================== 
+-- Table: SocialNetwork 
+-- =============================================== 
+-- This table contains information about the social media platforms linked to users' profiles. 
+-- Columns: 
+-- - SocialNetworkID: A unique identifier for each social network record (Primary Key). 
+-- - Name: The name of the social media platform (e.g., Facebook, Twitter). 
+-- - URL: The URL of the social media platform. 
+-- Relationships: 
+-- - None 
+-- =============================================== 
+ 
+
+8. UserSocialNetwork 
+
+-- =============================================== 
+-- Table: UserSocialNetwork 
+-- =============================================== 
+-- This table links users to their social media profiles. 
+-- Columns: 
+-- - UserSocialNetworkID: A unique identifier for each record (Primary Key). 
+-- - UserID: A foreign key referencing the User table, indicating who owns the social media account. 
+-- - SocialNetworkID: A foreign key referencing the SocialNetwork table, indicating the platform. 
+-- - SocialProfileURL: The URL of the user’s profile on the social media platform. 
+-- Relationships: 
+-- - UserID is a foreign key referencing User(UserID). 
+-- - SocialNetworkID is a foreign key referencing SocialNetwork(SocialNetworkID). 
+-- =============================================== 
+ 
+
+9. Message 
+
+-- =============================================== 
+-- Table: Message 
+-- =============================================== 
+-- This table stores messages exchanged between users. 
+-- Columns: 
+-- - MessageID: A unique identifier for each message (Primary Key). 
+-- - SenderID: A foreign key referencing the User table, indicating who sent the message. 
+-- - ReceiverID: A foreign key referencing the User table, indicating who received the message. 
+-- - Content: The content of the message. 
+-- - SentAt: The timestamp when the message was sent. 
+-- Relationships: 
+-- - SenderID is a foreign key referencing User(UserID). 
+-- - ReceiverID is a foreign key referencing User(UserID). 
+-- =============================================== 
+ 
+
+10. Availability 
+
+-- =============================================== 
+-- Table: Availability 
+-- =============================================== 
+-- This table records the availability of listings for booking. 
+-- Columns: 
+-- - AvailabilityID: A unique identifier for each availability record (Primary Key). 
+-- - ListingID: A foreign key referencing the Listing table, indicating the listing whose availability is being recorded. 
+-- - Date: The specific date for which the listing’s availability is being recorded. 
+-- - IsAvailable: A boolean value indicating whether the listing is available on the given date. 
+-- Relationships: 
+-- - ListingID is a foreign key referencing Listing(ListingID). 
+-- =============================================== 
+ 
+
+11. Amenity 
+
+-- =============================================== 
+-- Table: Amenity 
+-- =============================================== 
+-- This table contains information about various amenities that can be offered by listings. 
+-- Columns: 
+-- - AmenityID: A unique identifier for each amenity (Primary Key). 
+-- - Name: The name of the amenity (e.g., WiFi, Pool). 
+-- - Description: A short description of the amenity. 
+-- Relationships: 
+-- - None 
+-- =============================================== 
+ 
+
+12. ListingAmenity 
+
+-- =============================================== 
+-- Table: ListingAmenity 
+-- =============================================== 
+-- This table links listings to the amenities they offer. 
+-- Columns: 
+-- - ListingAmenityID: A unique identifier for each record (Primary Key). 
+-- - ListingID: A foreign key referencing the Listing table, indicating the listing offering the amenity. 
+-- - AmenityID: A foreign key referencing the Amenity table, indicating the offered amenity. 
+-- Relationships: 
+-- - ListingID is a foreign key referencing Listing(ListingID). 
+-- - AmenityID is a foreign key referencing Amenity(AmenityID). 
+-- =============================================== 
+ 
+
+13. City 
+
+-- =============================================== 
+-- Table: City 
+-- =============================================== 
+-- This table stores information about cities where listings are located. 
+-- Columns: 
+-- - CityID: A unique identifier for each city (Primary Key). 
+-- - Name: The name of the city. 
+-- - Country: The country where the city is located. 
+-- Relationships: 
+-- - None 
+-- =============================================== 
+ 
+
+14. Host 
+
+-- =============================================== 
+-- Table: Host 
+-- =============================================== 
+-- This table stores information about users who host listings on the platform. 
+-- Columns: 
+-- - HostID: A unique identifier for each host (Primary Key). 
+-- - UserID: A foreign key referencing the User table, indicating the user who is a host. 
+-- - Bio: A short biography of the host. 
+-- Relationships: 
+-- - UserID is a foreign key referencing User(UserID). 
+-- =============================================== 
+ 
+
+15. Guest 
+
+-- =============================================== 
+-- Table: Guest 
+-- =============================================== 
+-- This table stores information about users who book listings on the platform. 
+-- Columns: 
+-- - GuestID: A unique identifier for each guest (Primary Key). 
+-- - UserID: A foreign key referencing the User table, indicating the user who is a guest. 
+-- - Preferences: A text field storing any preferences the guest might have. 
+-- Relationships: 
+-- - UserID is a foreign key referencing User(UserID). 
+-- =============================================== 
+ 
+
+16. Admin 
+
+-- =============================================== 
+-- Table: Admin 
+-- =============================================== 
+-- This table stores information about administrative users on the platform. 
+-- Columns: 
+-- - AdminID: A unique identifier for each admin (Primary Key). 
+-- - UserID: A foreign key referencing the User table, indicating the user who is an admin. 
+-- - Role: The role of the admin (e.g., SuperAdmin, Moderator). 
+-- Relationships: 
+-- - UserID is a foreign key referencing User(UserID). 
+-- =============================================== 
+ 
+
+17. Reservation 
+
+-- =============================================== 
+-- Table: Reservation 
+-- =============================================== 
+-- This table stores information about each reservation made by guests. 
+-- Columns: 
+-- - ReservationID: A unique identifier for each reservation (Primary Key). 
+-- - ListingID: A foreign key referencing the Listing table, indicating the listing being reserved. 
+-- - GuestID: A foreign key referencing the Guest table, indicating the guest who made the reservation. 
+-- - CheckInDate: The date the guest is scheduled to check in. 
+-- - CheckOutDate: The date the guest is scheduled to check out. 
+-- - TotalPrice: The total price of the reservation. 
+-- - Status: The current status of the reservation (e.g., pending, confirmed, canceled). 
+-- Relationships: 
+-- - ListingID is a foreign key referencing Listing(ListingID). 
+-- - GuestID is a foreign key referencing Guest(GuestID). 
+-- =============================================== 
+ 
+
+18. Maintenance 
+
+-- =============================================== 
+-- Table: Maintenance 
+-- =============================================== 
+-- This table records maintenance requests and activities for listings. 
+-- Columns: 
+-- - MaintenanceID: A unique identifier for each maintenance request (Primary Key). 
+-- - ListingID: A foreign key referencing the Listing table, indicating the listing that needs maintenance. 
+-- - RequestDate: The date the maintenance request was made. 
+-- - Status: The current status of the maintenance request (e.g., pending, in-progress, completed). 
+-- - Description: A detailed description of the maintenance issue. 
+-- Relationships: 
+-- - ListingID is a foreign key referencing Listing(ListingID). 
+-- =============================================== 
+ 
+
+19. ListingPhoto 
+
+-- =============================================== 
+-- Table: ListingPhoto 
+-- =============================================== 
+-- This table stores photos associated with listings. 
+-- Columns: 
+-- - ListingPhotoID: A unique identifier for each photo (Primary Key). 
+-- - ListingID: A foreign key referencing the Listing table, indicating the listing the photo belongs to. 
+-- - PhotoURL: The URL of the photo. 
+-- - Caption: A short caption or description for the photo. 
+-- Relationships: 
+-- - ListingID is a foreign key referencing Listing(ListingID). 
+-- =============================================== 
+ 
+
+20. Coupon 
+
+-- =============================================== 
+-- Table: Coupon 
+-- =============================================== 
+-- This table contains information about discount coupons that can be applied to bookings. 
+-- Columns: 
+-- - CouponID: A unique identifier for each coupon (Primary Key). 
+-- - Code: The coupon code. 
+-- - Description: A description of the discount offered by the coupon. 
+-- - DiscountPercentage: The percentage discount offered by the coupon. 
+-- - ExpiryDate: The date when the coupon expires. 
+-- Relationships: 
+-- - None 
+-- =============================================== 
+ 
+
+21. BookingCoupon 
+
+-- =============================================== 
+-- Table: BookingCoupon 
+-- =============================================== 
+-- This table records the application of coupons to bookings. 
+-- Columns: 
+-- - BookingCouponID: A unique identifier for each record (Primary Key). 
+-- - BookingID: A foreign key referencing the Booking table, indicating the booking to which the coupon is applied. 
+-- - CouponID: A foreign key referencing the Coupon table, indicating the applied coupon. 
+-- - AppliedAt: The date and time when the coupon was applied. 
+-- - DiscountedAmount: The amount discounted from the total price due to the coupon. 
+-- Relationships: 
+-- - BookingID is a foreign key referencing Booking(BookingID). 
+-- - CouponID is a foreign key referencing Coupon(CouponID). 
+-- =============================================== 
+
+ 

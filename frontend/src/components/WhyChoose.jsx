@@ -1,5 +1,10 @@
 import PropTypes from "prop-types";
 import styles from "./WhyChoose.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faCircleCheck, } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faLanguage, faRocket, faClock, faEnvelope, faHeadset } from '@fortawesome/free-solid-svg-icons';
+
+import UtilityBox from "./NewCustomComponents/UtilityBox";
 
 const WhyChoose = ({ className = "" }) => {
   return (
@@ -46,7 +51,7 @@ const WhyChoose = ({ className = "" }) => {
             </div>
           </div>
           <div className={styles.frameParent}>
-            <div className={styles.maskGroupParent}>
+            {/* <div className={styles.maskGroupParent}>
               <input className={styles.maskGroup} type="checkbox" />
               <input className={styles.maskGroup1} type="checkbox" />
               <input className={styles.maskGroup2} type="checkbox" />
@@ -78,10 +83,39 @@ const WhyChoose = ({ className = "" }) => {
                   Facebook).
                 </h3>
               </div>
+            </div> */}
+
+
+            {/* <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faCircleCheck}/>
+              <p style={{fontSize: '18px', marginLeft: '10px',}}>Publish research paper in almost all academic/research disciplines (multidisciplinary).</p>
             </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faCircleCheck}/>
+              <p style={{fontSize: '18px', marginLeft: '10px'}}>Publish research paper in almost all spoken languages.</p>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faCircleCheck}/>
+              <p style={{fontSize: '18px', marginLeft: '10px'}}>Easy and fast review and publication system.</p>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faCircleCheck}/>
+              <p style={{fontSize: '18px', marginLeft: '10px'}}>Authors can check review and publication process status online anytime.</p>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faCircleCheck}/>
+              <p style={{fontSize: '18px', marginLeft: '10px'}}>Email notification sent to the authors at each process stage.</p>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faCircleCheck}/>
+              <p style={{fontSize: '18px', marginLeft: '10px'}}>Quick support through email, phone and social media (WhatsApp, Facebook).</p>
+            </div> */}
+
+
           </div>
         </div>
-        <div className={styles.copyright}>
+        <UtilityBox/>
+        {/* <div className={styles.copyright}>
           <div className={styles.downloadsParent}>
             <h2 className={styles.downloads}>Downloads</h2>
             <div className={styles.lineParent}>
@@ -118,6 +152,32 @@ const WhyChoose = ({ className = "" }) => {
             </div>
             <div className={styles.coverPage}>Cover Page</div>
           </div>
+        </div> */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'start',}}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faGlobe} color="#0181F7"/>
+              <p style={{fontSize: '18px', marginLeft: '10px',}}>Publish research paper in almost all academic/research disciplines (multidisciplinary).</p>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faLanguage} color="#0181F7"/>
+              <p style={{fontSize: '18px', marginLeft: '10px'}}>Publish research paper in almost all spoken languages.</p>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faRocket} color="#0181F7"/>
+              <p style={{fontSize: '18px', marginLeft: '10px'}}>Easy and fast review and publication system.</p>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faClock} color="#0181F7"/>
+              <p style={{fontSize: '18px', marginLeft: '10px'}}>Authors can check review and publication process status online anytime.</p>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faEnvelope} color="#0181F7"/>
+              <p style={{fontSize: '18px', marginLeft: '10px'}}>Email notification sent to the authors at each process stage.</p>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faHeadset} color="#0181F7"/>
+              <p style={{fontSize: '18px', marginLeft: '10px'}}>Quick support through email, phone and social media (WhatsApp, Facebook).</p>
+            </div>
         </div>
       </div>
     </section>

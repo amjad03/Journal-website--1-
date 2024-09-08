@@ -22,7 +22,7 @@ const FrameComponent2 = ({ className = "" }) => {
                   />
                   <h3 className={styles.ijestmEmpowersResearchersContainer}>
                     <p
-                      className={styles.ijestmEmpowersResearchers}
+                      // className={styles.ijestmEmpowersResearchers}
                     >{`IJESTM empowers researchers & readers through:`}</p>
                     <ul className={styles.openAccessPublishingOptions}>
                       <li className={styles.openAccessPublishing}>

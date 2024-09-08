@@ -1,12 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from "prop-types";
 import styles from "./Header.module.css";
+import './Header.css'
 import { db } from '../../../../backend/firebase'; // Adjust the import according to your firebase configuration file
 import { doc, getDoc } from 'firebase/firestore/lite';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 
 const Header = ({ className = "" }) => {
   const [currentData, setCurrentData] = useState(null);
+
+  const marqueeRef = useRef(null);
+
+  const handleMouseOver = () => {
+    if (marqueeRef.current) {
+      marqueeRef.current.stop();
+    }
+  };
+
+  const handleMouseOut = () => {
+    if (marqueeRef.current) {
+      marqueeRef.current.start();
+    }
+  };
 
   let volume = '';
   let issue = '';
@@ -37,7 +54,7 @@ const Header = ({ className = "" }) => {
 
   return (
     <header className={[styles.header, className].join(" ")}>
-      <nav className={styles.logoBar}>
+      {/* <nav className={styles.logoBar}>
         <div className={styles.journalNameWrapper}>
           <div className={styles.frameParent}>
             <div className={styles.cooltext4611840960970061Wrapper}>
@@ -88,11 +105,11 @@ const Header = ({ className = "" }) => {
           </div>
           <a href="/admin-panel" className={styles.profile}>Profile</a>
         </div>
-      </nav>
-      <div className={styles.headerSeparator}>
+      </nav> */}
+      {/* <div className={styles.headerSeparator}>
         <div className={styles.headerSeparatorChild} />
-      </div>
-      <div className={styles.siteName}>
+      </div> */}
+      {/* <div className={styles.siteName}>
         <h2 className={styles.internationalJournalOf1}>
           International Journal of Engineering, Science Technology and
           Management 
@@ -149,7 +166,55 @@ const Header = ({ className = "" }) => {
             <span className={styles.contactUs}>Contact US</span>
           </a>
         </div>
+      </div> */}
+
+      <div className='header_section' style={{display: 'flex', alignItems: 'center'}}>
+        <div className="logo_section">
+          <img className='logo' style={{ margin: '10px'}} src="./images/logo_new.png" alt="Logo" />
+        </div>
+        <div className="title_section">
+          <h1 className='title'>International Journal of Engineering, Science, Technology and Management</h1>
+          <hr style={{ width: '80%'}} />
+          <h5 className='subtitle'>A Widely Indexed Open Access Peer Reviewed Multidisciplinary International Journal</h5>
+        </div>
       </div>
+
+      <div className="marquee_section">
+        {/* <p behavior="" direction="">
+        {currentData != null ? `Call for paper Volume ${currentData.volume} Issue ${currentData.issue} ${formatDateRange('Issue'+currentData.issue)} * Submit your research`
+          : ''}
+        </p> */}
+
+        <marquee
+          ref={marqueeRef}
+          behavior="scroll"
+          direction="left"
+          scrollamount="5"
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+        >
+        {currentData != null ? `Call for paper Volume ${currentData.volume} Issue ${currentData.issue} ${formatDateRange('Issue'+currentData.issue)} * Submit your research`
+          : ''}
+        </marquee>
+      </div>
+      <div className="nav_link_container">
+        <li>
+          <a href="/">
+          <FontAwesomeIcon icon={faHome} color=''/>
+          &nbsp;Home
+          </a>
+        </li>
+
+        <li><a href="/aim-scope">Aim & Scope</a></li>
+        <li><a href="/editorial-team">Editorial Team</a></li>
+        <li><a href="/submit-paper-page-new">Submissions</a></li>
+        <li><a href="/current">Current</a></li>
+        <li><a href="/publications-page">Archives</a></li>
+        <li><a href="/indexing">Indexing</a></li>
+        <li><a href="/publication-ethics">Publication Ethics</a></li>
+        <li><a href="/contact-us-page">Contact US</a></li>
+      </div>
+
     </header>
   );
 };

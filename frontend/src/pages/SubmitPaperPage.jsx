@@ -1959,7 +1959,7 @@ var a = 10;
 
 
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 // import { db, storage, } from '../../firebase'; // Adjust the import path as necessary
 import { db, storage, } from '../../../backend/firebase'; // Adjust the import path as necessary
 
@@ -1981,6 +1981,8 @@ import { ref, uploadBytes, getDownloadURL } from "@firebase/storage";
 // import Header from './Header'; // Adjust the import according to your Header component file
 
 const SubmitPaperPage = () => {
+  const [areas, setAreas] = useState([]);
+
   const [formData, setFormData] = useState({
     title: '',
     abstract: '',
@@ -2098,6 +2100,27 @@ const SubmitPaperPage = () => {
       alert('Error submitting journal: ' + error.message);
     }
   };
+
+  useEffect(() => {
+    const fetchAreas = async () => {
+      try {
+        const docRef = doc(db, "Research_Areas", "research_areas");
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setAreas(docSnap.data().areas);
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {
+        console.error("Error fetching document: ", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAreas();
+  }, []);
   // const [formData, setFormData] = useState({
   //   title: '',
   //   abstract: '',
@@ -2261,7 +2284,7 @@ const SubmitPaperPage = () => {
 
           <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <h3 style={{ fontSize: '30px', margin: '20px' }}>Research Area</h3>
-            <select
+            {/* <select
               name="researchArea"
               value={formData.researchArea}
               onChange={handleInputChange}
@@ -2275,6 +2298,18 @@ const SubmitPaperPage = () => {
               <option value="Software Engineering">Software Engineering</option>
               <option value="Cybersecurity">Cybersecurity</option>
               <option value="Robotics">Robotics</option>
+            </select> */}
+            <select
+            name="researchArea"
+            value={formData.researchArea}
+            onChange={handleInputChange}
+            style={{ fontSize: '20px', width: '73%', backgroundColor: '#EFEFEF', padding: '15px', borderRadius: '12px', borderLeft: '6px solid red' }}
+            >
+              {areas.map((area, index) => (
+                <option key={index} value={area}>
+                  {area}
+                </option>
+              ))}
             </select>
           </div>
 

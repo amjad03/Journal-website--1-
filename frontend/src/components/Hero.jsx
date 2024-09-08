@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./Hero.module.css";
+import AuthorsDesk from "./NewCustomComponents/AuthorsDesk";
 
 const Hero = ({ className = "" }) => {
   return (
@@ -91,8 +92,8 @@ const Hero = ({ className = "" }) => {
             </div>
           </div>
         </div>
-        <div className={styles.features}>
-          <div className={styles.featuresHeader}>
+        {/* <div className={styles.features}> */}
+          {/* <div className={styles.featuresHeader}>
             <h2 className={styles.authorsDesk}>Author’s Desk</h2>
             <div className={styles.featureIcons}>
               <div className={styles.featuresSeparator} />
@@ -211,14 +212,10 @@ const Hero = ({ className = "" }) => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className={styles.submission}>
-            <button className={styles.rectangleParent}>
-              <div className={styles.frameChild} />
-              <b className={styles.submitArticle}>Submit Article</b>
-            </button>
-          </div>
-        </div>
+          </div> */}
+          <AuthorsDesk/>
+          
+        {/* </div> */}
       </div>
     </section>
   );

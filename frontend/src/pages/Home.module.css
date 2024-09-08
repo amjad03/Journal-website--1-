@@ -143,7 +143,7 @@
   background-color: var(--color-white);
   overflow: hidden;
   flex-direction: column;
-  align-items: flex-end;
+  /* align-items: flex-end; */
   padding: var(--padding-lgi) 0 0;
   gap: var(--gap-16xl);
   line-height: normal;

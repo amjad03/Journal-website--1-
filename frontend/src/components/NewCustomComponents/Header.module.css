@@ -1,4 +1,4 @@
-
+/* 
 .cooltext4611840960970061Icon {
   height: 18.8px;
   width: 67.7px;
@@ -211,8 +211,6 @@
   z-index: 1;
 }
 .slogan {
-  /* margin-right: -110px;
-  width: 986px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -546,4 +544,12 @@ a {
 .navbar a {
   text-decoration: none;
 }
+ */
 
+
+ @import url('https://fonts.googleapis.com/css2?family=Anton&family=Jura:wght@300..700&family=Stardos+Stencil:wght@400;700&display=swap');
+
+
+ .title {
+  font-family: "Stardos Stencil", system-ui !important;
+ }

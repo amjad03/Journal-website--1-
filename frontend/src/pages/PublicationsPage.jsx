@@ -1479,19 +1479,114 @@
 
 
 import React, { useEffect, useState } from 'react';
-import { getFirestore, collection, getDocs, doc,  } from "firebase/firestore/lite";
+import { getFirestore, collection, getDocs, doc, getDoc } from "firebase/firestore/lite";
 import { db } from "../../../backend/firebase"; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import Header from '../components/NewCustomComponents/Header';
+import AuthorsDesk from '../components/NewCustomComponents/AuthorsDesk';
+import { useNavigate } from 'react-router-dom';
 
 const PublicationsPage = () => {
   const [volumes, setVolumes] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const [currentData, setCurrentData] = useState(null);
+  const [papers, setPapers] = useState([]);
+
   const [selectedPapers, setSelectedPapers] = useState([]);
   const [selectedVolumeId, setSelectedVolumeId] = useState('');
   const [selectedIssueId, setSelectedIssueId] = useState('');
   const [expandedPapers, setExpandedPapers] = useState({});
+
+  // let volume = 'Volume';
+  // let issue = 'Issue';
+
+  useEffect(() => {
+    const fetchDataCurrent = async () => {
+      // Fetch current document
+      // const currentDoc = await getDoc(doc(db, 'Current', 'current'));
+      // const currentData = currentDoc.data();
+      // // volume += currentData.volume;
+      // // issue += currentData.issue;
+      // // console.log(volume);
+      // // console.log(issue);
+
+      // // console.log(currentData);
+      // setCurrentData(currentData);
+      try {
+        // Fetch current document
+        const currentDoc = await getDoc(doc(db, 'Current', 'current'));
+        const currentData = currentDoc.data();
+        setCurrentData(currentData);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    };
+    fetchDataCurrent();
+  }, []);
+
+  // const { volume, issue } = currentData;
+  const volume = currentData?.volume || '1'; // Use default values if needed
+  const issue = currentData?.issue || '1'; // Us
+
+  // Function to generate the list
+  // const generateIssueList = (volume, currentIssue) => {
+  //   const issues = ['Issue1', 'Issue2', 'Issue3', 'Issue4'];
+  //   const dateRanges = ['January-March 2024', 'April-June 2024', 'July-September 2024', 'October-December 2024'];
+
+  //   return issues.map((issueId, index) => ({
+  //     issueId,
+  //     dateRange: dateRanges[index]
+  //   })).filter(issueData => volume === volume && (currentIssue === 'All' || issueData.issueId === `Issue${currentIssue}`));
+  // };
+  // const generateIssueList = (volume, currentIssue) => {
+  //   const issues = ['Issue1', 'Issue2', 'Issue3', 'Issue4'];
+  //   const dateRanges = ['January-March 2024', 'April-June 2024', 'July-September 2024', 'October-December 2024'];
+
+  //   // Find the index of the current issue
+  //   const currentIssueIndex = issues.indexOf(`Issue${currentIssue}`);
+    
+  //   return issues.map((issueId, index) => ({
+  //     issueId,
+  //     dateRange: dateRanges[index]
+  //   })).filter(issueData => volume === volume && 
+  //     (currentIssue === 'All' || index <= currentIssueIndex)
+  //   );
+  // };
+
+  const generateIssueList = (currentVolume, currentIssue) => {
+    const issues = ['Issue1', 'Issue2', 'Issue3', 'Issue4']; // Example issues
+    const dateRanges = ['January-March 2024', 'April-June 2024', 'July-September 2024', 'October-December 2024']; // Example date ranges
+  
+    const issueList = [];
+  
+    for (let volume = 1; volume <= currentVolume; volume++) {
+      for (let issue = 1; issue <= (volume === currentVolume ? currentIssue : issues.length); issue++) {
+        issueList.push({
+          issueId: issues[issue - 1], // -1 because array is 0-indexed
+          dateRange: dateRanges[issue - 1] // -1 because array is 0-indexed
+        });
+      }
+    }
+  
+    return issueList;
+  };
+
+  const issuesList = generateIssueList(volume, issue);
+
+  // const getDateRange = (issueNumber) => {
+  //   const dateRanges = [
+  //     'January-March 2024', 
+  //     'April-June 2024', 
+  //     'July-September 2024', 
+  //     'October-December 2024'
+  //   ];
+  //   return dateRanges[issueNumber - 1] || 'Unknown Date Range';
+  // };
+
+
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     try {
@@ -1567,6 +1662,35 @@ const PublicationsPage = () => {
     }
   };
 
+
+  // useEffect(() => {
+    // const getLatestIssuePapers = async () => {
+    //   try{
+    //     const latestIssuePaperData = await fetchPapers("Volume"+currentData.volume, "Issue"+currentData.issue);
+    //     setPapers(latestIssuePaperData);
+    //   } catch (error) {
+    //     console.error(`Error fetching papers for issue ${currentData.issue} in volume ${currentData.volume}: `, error);
+    //   }
+    // }
+  //   ;
+  //   getLatestIssuePapers();
+  // }, []);
+  useEffect(() => {
+    // Define and call the function within useEffect
+    const fetchPapersOnLoad = async () => {
+      try {
+        const latestIssuePaperData = await fetchPapers("Volume" + currentData.volume, "Issue" + currentData.issue);
+        setPapers(latestIssuePaperData);
+      } catch (error) {
+        console.error(`Error fetching papers for issue ${currentData.issue} in volume ${currentData.volume}: `, error);
+      }
+    };
+
+    fetchPapersOnLoad();
+  }, [currentData]);
+
+
+  
   const formatDateRange = (issueId) => {
     const dateRanges = {
       'Issue1': 'January-March 2024',
@@ -1619,61 +1743,450 @@ const PublicationsPage = () => {
       </div>
     );
   }
+  // if(volumes.length > 0 && volumes.length) {
 
-  return (
-    <div>
-      <Header />
-      <center style={{ backgroundColor: '#D9E3F0' }}>
-        <h1 style={{ paddingTop: '8px', paddingBottom: '8px' }}>Publications</h1>
-      </center>
+  const handlePaperClick = (paper) => {
+    console.log('clicked')
+    // console.log(paperId);
+    navigate('/paper-detail-page', { state: { paper } })
+  }
 
-      <center>
-        {volumes.map((volume, indexVolume) => (
-          <div key={volume.volumeId}>
-            {volume.issues.map((issue) => (
-              <div key={issue.issueId}>
-                <a href='#papers-index' onClick={() => handleIssueClick(volume.volumeId, issue.issueId)} style={{ cursor: 'pointer', color: 'blue' }}>
-                  Volume {indexVolume + 1} {issue.issueId} ({formatDateRange(issue.issueId)})
+  const volumeNumber = currentData.volume;
+  const issueNumber = currentData.issue;
+
+  // console.log(`Volume: ${volumeNumber} Issue: ${issueNumber}`);
+
+  const getDateRange = (issueNumber) => {
+    const dateRanges = [
+      'January-March 2024', 
+      'April-June 2024', 
+      'July-September 2024', 
+      'October-December 2024'
+    ];
+    return dateRanges[(issueNumber - 1) % 4] || 'Unknown Date Range';
+  };
+
+    return (
+      <div>
+        <Header />
+        <center style={{ backgroundColor: '#D9E3F0' }}>
+          <h1 style={{ paddingTop: '8px', paddingBottom: '8px' }}>Publications</h1>
+        </center>
+
+        <div style={{width: '100%', display: 'flex', alignItems: 'start', justifyContent: 'space-evenly'}}>
+          <img style={{ height: '350px'}} src="../../public/images/Frame 22.png" alt="" />
+          <center>
+            
+            
+          {/* for (let volume = 1; volume <= currentData.volume; volume++) {
+              for (let issue = 1; issue < currentData.issue; issue++) {
+                Volume {volume} {issueData.issueId} ({issueData.dateRange})
+              }
+          } */}
+          {/* {volumeNumber && issueNumber && (
+            <>
+              {Array.from({ length: volumeNumber }, (_, volumeIndex) => {
+                const volume = volumeIndex + 1;
+                return (
+                  <div key={volume}>
+                    {Array.from({ length: issueNumber }, (_, issueIndex) => {
+                      const issue = issueIndex + 1;
+                      return (
+                        <div key={issue} style={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+                          <a 
+                            href='#papers-index' 
+                            onClick={() => handleIssueClick(`Volume${volume}`, `Issue${issue}`)} 
+                            style={{ cursor: 'pointer', color: 'blue', lineHeight: '2' }}
+                          >
+                            Volume {volume} Issue{issue} ({getDateRange(issue)})
+                          </a>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </>
+          )}
+          {(!volumeNumber || !issueNumber) && (
+            <div>No issues available for the current volume.</div>
+          )} */}
+          {/* {volumeNumber && issueNumber && (
+        <>
+          {Array.from({ length: volumeNumber }, (_, volumeIndex) => {
+            const volume = volumeIndex + 1;
+            const maxIssues = volume === volumeNumber ? issueNumber : 4;
+
+            return (
+              <div key={volume}>
+                {Array.from({ length: maxIssues }, (_, issueIndex) => {
+                  const issue = issueIndex + 1;
+                  return (
+                    <div key={issue} style={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+                      <a 
+                        href='#papers-index' 
+                        onClick={() => handleIssueClick(volume, `Issue${issue}`)} 
+                        style={{ cursor: 'pointer', color: 'blue', lineHeight: '2' }}
+                      >
+                        Volume {volume} Issue{issue} ({getDateRange(issue)})
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </>
+      )}
+      {(!volumeNumber || !issueNumber) && (
+        <div>No issues available for the current volume.</div>
+      )} */}
+       {/* {volumeNumber && issueNumber && (
+        <>
+          {Array.from({ length: volumeNumber }, (_, volumeIndex) => {
+            const volume = volumeIndex + 1;
+            const maxIssues = volume === volumeNumber ? issueNumber : 4;
+
+            return (
+              <div key={volume}>
+                {Array.from({ length: maxIssues }, (_, issueIndex) => {
+                  const issue = issueIndex + 1;
+                  return (
+                    <div key={issue} style={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+                      <a 
+                        href='#papers-index' 
+                        onClick={() => handleIssueClick(volume, `Issue${issue}`)} 
+                        style={{ cursor: 'pointer', color: 'blue', lineHeight: '2' }}
+                      >
+                        Volume {volume} Issue{issue} ({getDateRange(issue)})
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </>
+      )}
+      {(!volumeNumber || !issueNumber) && (
+        <div>No issues available for the current volume.</div>
+      )} */}
+      {/* {volumeNumber && issueNumber && (
+        <>
+          {Array.from({ length: volumeNumber }, (_, volumeIndex) => {
+            const volume = volumeIndex + 1;
+            // Determine the number of issues to display for this volume
+            const maxIssues = volume === volumeNumber ? issueNumber : 4;
+
+            return (
+              <div key={volume}>
+                {Array.from({ length: maxIssues }, (_, issueIndex) => {
+                  const issue = issueIndex + 1;
+                  return (
+                    <div key={issue} style={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+                      <a 
+                        href='#papers-index' 
+                        onClick={() => handleIssueClick(volume, `Issue${issue}`)} 
+                        style={{ cursor: 'pointer', color: 'blue', lineHeight: '2' }}
+                      >
+                        Volume {volume} Issue{issue} ({getDateRange(issue)})
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </>
+      )}
+      {(!volumeNumber || !issueNumber) && (
+        <div>No issues available for the current volume.</div>
+      )} */}
+      {/* {Array.from({ length: volumeNumber }, (_, volumeIndex) => {
+        const volume = volumeIndex + 1;
+
+        // Determine max issues to show for the current volume
+        const maxIssues = volume === volumeNumber ? issueNumber : 4;
+
+        return (
+          <div key={volume}>
+            {Array.from({ length: maxIssues }, (_, issueIndex) => {
+              const issue = issueIndex + 1;
+
+              return (
+                <div key={`${volume}-${issue}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+                  <a 
+                    href='#papers-index' 
+                    onClick={() => handleIssueClick(volume, `Issue${issue}`)} 
+                    style={{ cursor: 'pointer', color: 'blue', lineHeight: '2' }}
+                  >
+                    Volume {volume} Issue{issue}
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        );
+      })} */}
+      {/* {(() => {
+        const items = [];
+        for (let volume = 1; volume <= volumeNumber; volume++) {
+          for (let issue = 1; issue <= (volume == volumeNumber ? issueNumber : 4); issue++) {
+            // console.log(volumeNumber);
+            items.push(
+              <div key={`${volume}-${issue}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+                <a 
+                  href='#papers-index' 
+                  key={`${volume}-${issue}`}
+                  onClick={() => handleIssueClick(volume, `Issue${issue}`)} 
+                  style={{ cursor: 'pointer', color: 'blue', lineHeight: '2' }}
+                >
+                  Volume {volume} Issue{issue} ({getDateRange(issue)})
                 </a>
               </div>
-            ))}
-          </div>
-        ))}
-      </center>
-
-      <div style={{ height: '10vh' }}></div>
-      {selectedVolumeId && selectedIssueId && (
-        <div>
-          <center style={{ backgroundColor: '#D9E3F0' }}>
-            <h4 id="papers-index" style={{ paddingTop: '5px', paddingBottom: '5px' }}>
-              {selectedVolumeId}, {selectedIssueId} {formatDateRange(selectedIssueId)}
-            </h4>
-          </center>
-          <div className="papers-index" style={{ padding: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            {selectedPapers.map((paper) => (
-              <div className="archive-rp-info" key={paper.id} style={{ width: '50%', marginBottom: '16px', border: '1px solid gray', padding: '8px 8px 4px', borderRadius: '8px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <a style={{ fontFamily: 'Metrophobic, Forum, Helvetica, Ubuntu, Arial, sans-serif', fontSize: '25px' }} href={paper.fileURL} target="_blank" rel="noopener noreferrer">{paper.title}</a>
-                  <span className="pdf-link">
-                    <a href={paper.fileURL} target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={faFilePdf} />
-                      &nbsp;PDF
-                    </a>
-                  </span>
-                </div>
-                <div style={{height: '20px'}}></div>
-                {/* <h3>{renderAbstract(paper.abstract, paper.id)}</h3> */}
-                {/* <h3>{paper.abstract}</h3> */}
-                <div><b>Author(s):</b> Dr. {paper.author.name}</div>
-                <div><b>Country:</b> India</div>
-                <div><b>Research Area:</b> {paper.researchArea}</div>
+            );
+          }
+        }
+        return items;
+      })()} */}
+      {(() => {
+        const items = [];
+        
+        for (let volume = volumeNumber; volume >= 1; volume--) {
+          const maxIssues = volume == volumeNumber ? issueNumber : 4;
+          
+          for (let issue = maxIssues; issue >= 1; issue--) {
+            items.push(
+              <div key={`${volume}-${issue}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+                <a 
+                  href='#papers-index' 
+                  onClick={() => handleIssueClick(volume, `Issue${issue}`)} 
+                  style={{ cursor: 'pointer', color: 'blue', lineHeight: '2' }}
+                >
+                  Volume {volume} Issue{issue} ({getDateRange(issue)})
+                </a>
               </div>
-            ))}
-          </div>
+            );
+          }
+        }
+        
+        return items;
+      })()}
+
+
+
+          </center>
+
+          <AuthorsDesk/>
         </div>
-      )}
-    </div>
-  );
+
+        {/* <div style={{ height: '10vh' }}></div> */}
+        {selectedVolumeId && selectedIssueId ? (
+          <div>
+            <center style={{ backgroundColor: '#D9E3F0' }}>
+              <h4 id="papers-index" style={{ paddingTop: '5px', paddingBottom: '5px' }}>
+                {selectedVolumeId}, {selectedIssueId} ({formatDateRange(selectedIssueId)})
+              </h4>
+            </center>
+            <div className="papers-index" style={{ padding: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              {selectedPapers.length > 0 ? selectedPapers.map((paper) => (
+                // <div className="archive-rp-info" key={paper.id} style={{ width: '50%', marginBottom: '16px', border: '1px solid gray', padding: '8px 8px 4px', borderRadius: '8px' }}>
+                <div 
+                  onMouseEnter={(e) => {
+                    // e.currentTarget.style.width = '51%';  // Increase width to 300px on hover
+                    // e.currentTarget.style.height = '110px'; // Increase height to 150px on hover
+                    e.currentTarget.style.boxShadow = '0px 0px 8px grey'; //
+                  }}
+                  onMouseLeave={(e) => {
+                    // e.currentTarget.style.width = '50%';  // Reset width to 200px on mouseleave
+                    // e.currentTarget.style.height = '100px'; // Reset height to 100px on mouseleave
+                    e.currentTarget.style.boxShadow = '0px 0px 6px lightGrey';
+
+                  }}
+                  onClick={() => handlePaperClick(paper)} // Update to handle click
+                  style={{
+                    cursor: 'pointer', 
+                    boxShadow: '0px 0px 6px lightGrey', 
+                    borderTop: '4px solid #003366', 
+                    width: '50%', 
+                    marginBottom: '16px', 
+                    borderRadius: '4px', 
+                    padding: '16px',
+                    transition: 'width 0.3s ease, height 0.3s ease'  // Add transition for smooth animation
+
+                  }}>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    {/* <a style={{ fontFamily: 'Metrophobic, Forum, Helvetica, Ubuntu, Arial, sans-serif', fontSize: '25px' }} href={paper.fileURL} target="_blank" rel="noopener noreferrer">{paper.title}</a> */}
+                    <h4>{paper.title}</h4>
+                  </div>
+                  {/* <div style={{height: '20px'}}></div> */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                    <div style={{ marginRight: '5px'}}>
+                    
+                      <div><b>Author(s):</b>
+                        {paper.authors.map((author, index) => (
+                              <span> Dr. {author.name}, </span>
+                        ))}
+                      </div>
+                      <div><b>Country:</b> India</div>
+                      <div><b>Research Area:</b> {paper.researchArea}</div>
+                    </div>
+                    
+                    <span 
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.border = '1px solid lightGrey';
+                      }} 
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.border = 'none';
+                      }}
+                      onClick={(e) =>{
+                          e.stopPropagation(); // Prevents the parent div's onClick from being triggered
+                          window.open(paper.fileURL, '_blank', 'noopener,noreferrer');
+                      }}
+                      style={{
+                        backgroundColor: '#D9E3F0',
+                        borderRadius: '4px', 
+                        padding: '8px 16px', 
+                        textDecoration: 'none', 
+                        color: 'black'
+                      }}
+                      className="pdf-lin">
+                      <a 
+                      // href={paper.fileURL} 
+                      // style={{ backgroundColor: '#D9E3F0', borderRadius: '4px', padding: '8px 16px', textDecoration: 'none', color: 'black'}} 
+                      style={{ fontSize: '12px', fontWeight: 'bold'}}
+                      target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faFilePdf} color='red'/>
+                        &nbsp;View PDF
+                      </a>
+                    </span>
+                  </div>
+                  <div style={{height: '10px'}}></div>
+                  <hr style={{ width: '50%'}} />
+                  <div style={{height: '10px'}}></div>
+
+                </div>
+              ))
+              :
+              <center>No papers found for the selected issue.</center>
+            }
+            </div>
+          </div>
+        )
+        :
+        (
+          <div>
+            <center style={{ backgroundColor: '#D9E3F0' }}>
+              <h4 id="papers-index" style={{ paddingTop: '5px', paddingBottom: '5px' }}>
+                {"Volume "+currentData.volume}, {"Issue "+currentData.issue} ({formatDateRange("Issue"+currentData.issue)})
+                {/* {console.log("Issue"+issue)} */}
+              </h4>
+            </center>
+            <div className="papers-index" style={{ padding: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              {papers.length > 0 ? papers.map((paper) => (
+                // <div className="archive-rp-info" key={paper.id} style={{ width: '50%', marginBottom: '16px', border: '1px solid gray', padding: '8px 8px 4px', borderRadius: '8px' }}>
+                <div 
+                  onMouseEnter={(e) => {
+                    // e.currentTarget.style.width = '51%';  // Increase width to 300px on hover
+                    // e.currentTarget.style.height = '110px'; // Increase height to 150px on hover
+                    e.currentTarget.style.boxShadow = '0px 0px 8px grey'; //
+                  }}
+                  onMouseLeave={(e) => {
+                    // e.currentTarget.style.width = '50%';  // Reset width to 200px on mouseleave
+                    // e.currentTarget.style.height = '100px'; // Reset height to 100px on mouseleave
+                    e.currentTarget.style.boxShadow = '0px 0px 6px lightGrey';
+
+                  }}
+                  onClick={() => handlePaperClick(paper)} // Update to handle click
+                  style={{
+                    cursor: 'pointer', 
+                    boxShadow: '0px 0px 6px lightGrey', 
+                    borderTop: '4px solid #003366', 
+                    width: '50%', 
+                    marginBottom: '16px', 
+                    borderRadius: '4px', 
+                    padding: '16px',
+                    transition: 'width 0.3s ease, height 0.3s ease'  // Add transition for smooth animation
+
+                  }}>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    {/* <a style={{ fontFamily: 'Metrophobic, Forum, Helvetica, Ubuntu, Arial, sans-serif', fontSize: '25px' }} href={paper.fileURL} target="_blank" rel="noopener noreferrer">{paper.title}</a> */}
+                    <h4>{paper.title}</h4>
+                  </div>
+                  {/* <div style={{height: '20px'}}></div> */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                    <div style={{ marginRight: '5px'}}>
+                    
+                      <div><b>Author(s):</b>
+                        {paper.authors.map((author, index) => (
+                              <span> Dr. {author.name}, </span>
+                        ))}
+                      </div>
+                      <div><b>Country:</b> India</div>
+                      <div><b>Research Area:</b> {paper.researchArea}</div>
+                    </div>
+                    
+                    <span 
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.border = '1px solid lightGrey';
+                      }} 
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.border = 'none';
+                      }}
+                      onClick={(e) =>{
+                          e.stopPropagation(); // Prevents the parent div's onClick from being triggered
+                          window.open(paper.fileURL, '_blank', 'noopener,noreferrer');
+                      }}
+                      style={{
+                        backgroundColor: '#D9E3F0',
+                        borderRadius: '4px', 
+                        padding: '8px 16px', 
+                        textDecoration: 'none', 
+                        color: 'black'
+                      }}
+                      className="pdf-lin">
+                      <a 
+                      // href={paper.fileURL} 
+                      // style={{ backgroundColor: '#D9E3F0', borderRadius: '4px', padding: '8px 16px', textDecoration: 'none', color: 'black'}} 
+                      style={{ fontSize: '12px', fontWeight: 'bold'}}
+                      target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faFilePdf} color='red'/>
+                        &nbsp;View PDF
+                      </a>
+                    </span>
+                  </div>
+                  <div style={{height: '10px'}}></div>
+                  <hr style={{ width: '50%'}} />
+                  <div style={{height: '10px'}}></div>
+
+                </div>
+              ))
+              :
+              <center>No papers found.</center>
+            }
+            </div>
+          </div>
+        )
+
+      }
+
+
+      </div>
+    );
+  // }
+  // else{
+  //   return (
+  //     <div>
+  //       <Header />
+  //       <center style={{ backgroundColor: '#D9E3F0' }}>
+  //         <h1 style={{ paddingTop: '8px', paddingBottom: '8px' }}>Publications</h1>
+  //       </center>
+  //       <center>Not found</center>
+  //     </div>
+  //   );
+  // }
 };
 
 export default PublicationsPage;

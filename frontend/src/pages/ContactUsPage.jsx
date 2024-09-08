@@ -11,7 +11,7 @@ const ContactUsPage = () => {
     <div className={styles.contactUsPage}>
     <Header/>
      
-      <div className={styles.contactUsPageChild} />
+      {/* <div className={styles.contactUsPageChild} /> */}
       <section className={styles.content}>
        
         

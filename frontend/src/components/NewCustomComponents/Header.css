@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Jura:wght@300..700&family=Stardos+Stencil:wght@400;700&display=swap');
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header_section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* padding: 20px; */
+}
+.logo{
+    height: 60px;
+}
+.title_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+ .title {
+  font-family: "Stardos Stencil", system-ui !important;
+  font-size: 30px;
+  /* line-height: 2.2; */
+  margin: 6px 0px;
+ }
+
+ .subtitle{
+    /* font-family: ; */
+    font-size: large;
+    margin: 6px 0px;
+    /* line-height: 2.2; */
+ }
+
+
+ .marquee_section {
+    width: 100%;
+    background-color: yellow;
+    margin: 10px 0px;
+    padding: 6px 0px;
+  }
+  
+  /* .marquee_section p {
+    padding: 5px;
+    margin: 5px; */
+    /* white-space: nowrap;  Prevents text from wrapping */ 
+    /* display: inline-block; Allows for horizontal scrolling */
+    /* animation: marquee 30s linear infinite; Controls animation speed and timing */
+    /* animation-play-state: running; Default state is running */
+    /* left: 100%; Starts text off-screen to the right */
+
+  /* } */
+  
+  /* Pause the animation on hover
+  .marquee_section:hover p {
+    /* animation-play-state: paused;
+    cursor: pointer;
+  } */
+  
+  .marquee_section:hover marquee {
+    cursor: pointer;
+  }
+
+
+.nav_link_container{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.nav_link_container li{
+    list-style-type: none;
+    background-color: #003366;
+    border-radius: 6px;
+}
+
+.nav_link_container li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.nav_link_container li:hover{
+    box-shadow: 0px 0px 8px gray;
+    padding: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @keyframes marquee {
+    from {
+      transform: translateX(100%); /* Starts text off-screen to the right */
+    }
+    to {
+      transform: translateX(-100%); /* Moves text off-screen to the left */
+    }
+  }
+  

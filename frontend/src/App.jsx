@@ -13,6 +13,8 @@ import Home from "./pages/Home";
 import AimScopePage from "./pages/AimScopePage";
 import EditorialTeamPage from "./pages/EditorialTeamPage";
 import AdminPanel from "./pages/AdminPanel";
+import SubmitPaperPageNew from "./pages/SubmitPaperPageNew";
+import Current from "./pages/Current";
 
 function App() {
   const action = useNavigationType();
@@ -59,7 +61,7 @@ function App() {
     if (metaDescription) {
       const metaDescriptionTag = document.querySelector(
         'head > meta[name="description"]'
-      );     b
+      );     
       if (metaDescriptionTag) {         
             metaDescriptionTag.content = metaDescription;       
         }
@@ -72,6 +74,9 @@ function App() {
       <Route path="/publications-page" element={<PublicationsPage />} />
       <Route path="/contact-us-page" element={<ContactUsPage />} />
       <Route path="/submit-paper-page" element={<SubmitPaperPage />} />
+      <Route path="/submit-paper-page-new" element={<SubmitPaperPageNew />} />
+      <Route path="/current" element={<Current />} />
+
       <Route path="/paper-detail-page" element={<PaperDetailPage />} />
       <Route path="/aim-scope-page" element={<AimScopePage/>} />
       <Route path="/editorial-team-page" element={<EditorialTeamPage />} />

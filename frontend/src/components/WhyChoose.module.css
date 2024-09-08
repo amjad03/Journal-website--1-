@@ -123,7 +123,7 @@
   align-self: stretch;
   flex-direction: row;
   align-items: flex-end;
-  gap: var(--gap-14xl);
+  /* gap: var(--gap-14xl); */
   text-align: center;
   font-size: var(--font-size-3xl);
   font-family: var(--font-judson);
@@ -273,7 +273,7 @@
 .whyContent {
   flex: 1;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   row-gap: 20px;
 }
 .whyChoose {
